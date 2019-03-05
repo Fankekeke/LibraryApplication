@@ -1,0 +1,240 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<!doctype html>
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Karigor - Portfolio Bootstrap4 Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" th:href="@{/img/favicon.ico}" type="image/x-icon">
+    <link rel="apple-touch-icon" th:href="@{/img/icon.png}">
+
+    <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700" rel="stylesheet">
+
+    <!-- Plugins -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/plugins.css}">
+
+    <!-- Style Css -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" th:href="@{/css/custom.css}">
+</head>
+
+<body>
+	<!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+	<!-- Add your site or application content here -->
+
+	<!-- Wrapper -->
+	<div id="wrapper" class="wrapper">
+
+		<!-- Header -->
+		<header class="header sticky-header">
+			<div class="container">
+				<div class="header-inner d-none d-lg-flex">
+					<div class="header-logo">
+						<a href="index.html">
+							<img th:src="@{/img/logo/logo-dark.png}" alt="logo">
+						</a>
+					</div>
+					<div class="header-navigation">
+						<button class="header-navigation-trigger">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+						<nav class="main-navigation">
+							<ul>
+                                <li><a href="index.html">HOME</a>
+                                    <ul>
+                                        <li><a href="index.html">Home Default Version</a></li>
+                                        <li><a href="index-dark.html">Home Dark Version</a></li>
+                                        <li><a href="index-boxed.html">Home Boxed Layout</a></li>
+                                    </ul>
+                                </li>
+								<li><a href="about.html">ABOUT US</a></li>
+                                <li><a href="portfolio.html">PORTFOLIO</a>
+                                    <ul>
+                                        <li><a href="portfolio-2-column.html">Portfolio 2 Column</a></li>
+                                        <li><a href="portfolio.html">Portfolio 3 Column</a></li>
+                                        <li><a href="portfolio-4-column.html">Portfolio 4 Column</a></li>
+                                        <li><a href="portfolio-masonry.html">Portfolio Masonry</a></li>
+                                        <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="blog.html">BLOG</a>
+                                    <ul>
+                                        <li><a href="blog.html">Blog Fullwidth</a></li>
+                                        <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
+                                        <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                                        <li><a href="blog-details.html">Blog Details</a>
+                                            <ul>
+												<li><a href="blog-details.html">Blog Details</a>
+                                                <li><a href="blog-details-right-sidebar.html">Blog Details Right Sidebar</a></li>
+                                                <li><a href="blog-details-left-sidebar.html">Blog Details Left Sidebar</a></li>
+                                            </ul>                                        
+                                        </li>
+                                    </ul>
+                                </li>
+								<li><a href="pricing.html">PRICING</a></li>
+								<li><a href="services.html">SERVICES</a></li>
+								<li><a href="contact.html">CONTACT</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="mobile-menu-wrapper d-block d-lg-none">
+					<div class="mobile-menu clearfix">
+						<a href="index.html" class="mobile-logo">
+							<img th:src="@{/img/logo/logo-dark.png}" alt="mobile logo">
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!--// Header -->
+
+        <!-- Breadcrumb Area -->
+        <div class="breadcrumb-area bg-grey">
+            <div class="container">
+                <div class="cr-breadcrumb">
+                    <h2>PRICING</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li>Pricing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--// Breadcrumb Area -->
+
+		<!-- Page Conttent -->
+		<main class="page-content">
+
+            <!-- Best Pricing -->
+            <div class="cr-section best-pricing-area section-padding-lg bg-white">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-7">
+                            <div class="section-title text-center">
+                                <h2>BEST PRICING</h2>
+                                <p>Here is the services which i know & provide all the time</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+
+                        <!-- Single Pricing -->
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="single-pricing mt-30">
+                                <div class="pricing-top">
+                                    <h3>BASIC PLAN</h3>
+                                    <p>$33<span>/Month</span></p>
+                                </div>
+                                <div class="pricing-bottom">
+                                    <ul>
+                                        <li>2GB Memory</li>
+                                        <li>1 Core Processor</li>
+                                        <li>20GB SSD Disk</li>
+                                        <li>1TB Transfer</li>
+                                        <li>24 hours support</li>
+                                    </ul>
+                                    <a class="button" href="#" data-content="Purchase Now">
+                                        <span>Purchase Now</span>
+                                    </a>
+                                </div>
+                            </div>    
+                        </div>
+                        <!--// Single Pricing -->
+
+                        <!-- Single Pricing -->
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="single-pricing is-active mt-30">
+                                <div class="pricing-top">
+                                    <h3>BUSINESS PLAN</h3>
+                                    <p>$66<span>/Month</span></p>
+                                </div>
+                                <div class="pricing-bottom">
+                                    <ul>
+                                        <li>5GB Memory</li>
+                                        <li>3 Core Processor</li>
+                                        <li>20GB SSD Disk</li>
+                                        <li>2TB Transfer</li>
+                                        <li>24 hours support</li>
+                                    </ul>
+                                    <a class="button" href="#" data-content="Purchase Now">
+                                        <span>Purchase Now</span>
+                                    </a>
+                                </div>
+                            </div>    
+                        </div>
+                        <!--// Single Pricing -->
+
+                        <!-- Single Pricing -->
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="single-pricing mt-30">
+                                <div class="pricing-top">
+                                    <h3>PREMIUM PLAN</h3>
+                                    <p>$99<span>/Month</span></p>
+                                </div>
+                                <div class="pricing-bottom">
+                                    <ul>
+                                        <li>10GB Memory</li>
+                                        <li>5 Core Processor</li>
+                                        <li>20GB SSD Disk</li>
+                                        <li>3TB Transfer</li>
+                                        <li>24 hours support</li>
+                                    </ul>
+                                    <a class="button" href="#" data-content="Purchase Now">
+                                        <span>Purchase Now</span>
+                                    </a>
+                                </div>
+                            </div>    
+                        </div>
+                        <!--// Single Pricing -->
+
+                    </div>
+                </div>
+            </div>
+            <!--// Best Pricing -->
+
+		</main>
+		<!--// Page Conttent -->
+
+		<!-- Footer Area -->
+		<footer class="footer-area bg-white">
+			<div class="container">
+				<ul class="footer-inner">
+                    <li>著作権 © 2019 樊可</li>
+                    <li><a href="http://sasuke.club/">悲伤的桔子树</a></li>
+				</ul>
+			</div>
+		</footer>
+		<!--// Footer Area -->
+
+	</div>
+	<!--// Wrapper -->
+
+	<!-- Js Files -->
+    <script th:src="@{/js/vendor/modernizr-3.6.0.min.js}"></script>
+    <script th:src="@{/js/vendor/jquery-3.3.1.min.js}"></script>
+    <script th:src="@{/js/popper.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/js/plugins.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
+</body>
+
+
+
+</html>

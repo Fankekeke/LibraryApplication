@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.library.library.mapper.PublishersMapper">
+
+    <!--获取出版社信息-->
+    <select id="selectPublishers" resultMap="PubliList">
+        SELECT * FROM publishers s,pub_info p WHERE s.pub_id=p.pub_id
+    </select>
+
+
+    <resultMap type="publishers" id="PubliList">
+        <result property="pubId" column="pub_id"/>
+        <result property="pubName" column="pub_name"/>
+        <result property="city" column="city"/>
+        <result property="pubTime" column="pub_time"/>
+        <result property="pubHttp" column="pub_http"/>
+        <association property="pubinfo" javaType="pubinfo">
+            <result property="pubId" column="pub_id"/>
+            <result property="logo" column="logo"/>
+            <result property="prInfo" column="pr_info"/>
+        </association>
+    </resultMap>
+
+    <!--删除出版社-->
+    <delete id="deletePiublisher" parameterType="int">
+        DELETE FROM publishers WHERE emp_id=#{pubId}
+    </delete>
+
+
+    <!--根据id获取出版社信息-->
+    <select id="selectPubById" resultMap="PubliList" parameterType="int">
+    SELECT * FROM publishers s,pub_info p WHERE s.pub_id=p.pub_id AND s.pub_id=#{pubId}
+    </select>
+
+    <!--分页查询-->
+    <select id="selectPubByFenye" resultMap="PubliList">
+        SELECT * FROM publishers
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="pubName != null and pubName!=''">
+                and pub_name LIKE CONCAT('%',#{pubName},'%')
+            </if>
+            <if test="city != null and city!=''">
+                and city=#{city}
+            </if>
+        </trim>
+        LIMIT #{pageNo},#{pageSize}
+    </select>
+
+    <!--查询总数量-->
+    <select id="selectPubCount" resultType="int">
+        SELECT COUNT(1) FROM publishers
+    </select>
+
+</mapper>

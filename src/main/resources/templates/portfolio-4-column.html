@@ -1,0 +1,182 @@
+<!doctype html>
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Karigor - Portfolio Bootstrap4 Template</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" th:href="@{/img/favicon.ico}" type="image/x-icon">
+	<link rel="apple-touch-icon" th:href="@{/img/icon.png}">
+
+	<!-- Google font (font-family: 'Dosis', sans-serif;) -->
+	<link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700" rel="stylesheet">
+	
+	<!-- Plugins -->
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<link rel="stylesheet" th:href="@{/css/plugins.css}">
+
+	<!-- Style Css -->
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+
+	<!-- Custom Styles -->
+	<link rel="stylesheet" th:href="@{/css/custom.css}">
+</head>
+
+<body>
+	<!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+	<!-- Add your site or application content here -->
+
+	<!-- Wrapper -->
+	<div id="wrapper" class="wrapper">
+
+		<!-- Header -->
+		<header class="header sticky-header">
+			<div class="container">
+				<div class="header-inner d-none d-lg-flex">
+					<div class="header-logo">
+						<a href="index.html">
+							<img th:src="@{/img/logo/logo-dark.png}" alt="logo">
+						</a>
+					</div>
+					<div class="header-navigation">
+						<button class="header-navigation-trigger">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+						<nav class="main-navigation">
+							<ul>
+								<li>
+									<a th:href="@{/users/main.html}">主页</a>
+								</li>
+								<li><a th:href="@{/users/about.html}">关于我们</a></li>
+								<li><a th:href="@{/users/search.html}">图书资源</a></li>
+								<li><a th:href="@{/mess/messlist}">馆内公告</a></li>
+								<li th:if="${session.user}!=null">
+									<a th:text="${session.user.uname}">登录</a>
+									<ul>
+										<li><a th:href="@{/users/getSale.html}">我的订单</a></li>
+									</ul>
+								</li>
+								<li th:if="${session.user}==null">
+									<a th:href="@{/users/login.html}">登录</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="mobile-menu-wrapper d-block d-lg-none">
+					<div class="mobile-menu clearfix">
+						<a href="index.html" class="mobile-logo">
+							<img th:src="@{/img/logo/logo-dark.png}" alt="mobile logo">
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!--// Header -->
+
+        <!-- Breadcrumb Area -->
+        <div class="breadcrumb-area bg-grey">
+            <div class="container">
+                <div class="cr-breadcrumb">
+                    <h2>图书资源</h2>
+					<ul>
+						<li><a th:href="@{users/main.html}">Home</a></li>
+						<li>图书资源</li>
+					</ul>
+                </div>
+            </div>
+        </div>
+        <!--// Breadcrumb Area -->
+
+		<!-- Page Conttent -->
+		<main class="page-content">
+
+            <!-- Portfolios Ara -->
+			<div class="cr-section portfolios-area section-padding-lg bg-white">
+				<div class="container">
+
+					<div class="portfolio-filters text-center">
+						<!-- Single Widget -->
+						<section class="single-widget widget-search">
+							<h5 class="widget-title">SEARCH</h5>
+							<form th:action="@{/book/searchBook}">
+								<input type="text" placeholder="Search..." style="width: 50%" name="mess">
+								<button type="submit"><i class="fa fa-search"></i></button>
+							</form>
+						</section>
+						<!--// Single Widget -->
+					</div>
+
+					<div class="row portfolios-wrapper portfolios-zoom-button-holder">
+						
+						<!-- Single Portfolio -->
+						<div class="col-xl-3 col-lg-4 col-md-6 col-12 portfolio-item" th:each="book : ${bookList}" th:if="book.image!=''">
+							<div class="portfolio">
+								<div class="portfolio-image">
+									<img th:src="${book.image}" alt="portfolio image" style="width: 270px;height: 306.48px">
+								</div>
+								<div class="portfolio-content">
+									<a th:href="${book.image}" class="portfolio-zoom-button" style="width: 270px;height: 306.48px"></a>
+									<h5><a th:href="@{/book/getBook(isbn=${book.isbn})}" th:text="${book.title}"></a></h5>
+									<h6><a th:href="@{/book/getBook(isbn=${book.isbn})}" th:text="${book.author}">PORTFOLIO</a></h6>
+								</div>
+							</div>
+						</div>
+						<!--// Single Portfolio -->
+						
+
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 text-center mt-5">
+                            <a href="portfolio.html" class="button" data-content="View More">
+                                <span>View More</span>
+                            </a>
+                        </div>
+                    </div>
+
+				</div>
+			</div>
+			<!--// Portfolios Ara -->
+
+		</main>
+		<!--// Page Conttent -->
+
+		<!-- Footer Area -->
+		<footer class="footer-area bg-white">
+			<div class="container">
+				<ul class="footer-inner">
+					<li>著作権 © 2019 樊可</li>
+					<li><a href="http://sasuke.club/">悲伤的桔子树</a></li>
+				</ul>
+			</div>
+		</footer>
+		<!--// Footer Area -->
+
+	</div>
+	<!--// Wrapper -->
+
+	<!-- Js Files -->
+	<script th:src="@{/js/vendor/modernizr-3.6.0.min.js}"></script>
+	<script th:src="@{/js/vendor/jquery-3.3.1.min.js}"></script>
+	<script th:src="@{/js/popper.min.js}"></script>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	<script th:src="@{/js/plugins.js}"></script>
+	<script th:src="@{/js/main.js}"></script>
+</body>
+
+
+
+</html>

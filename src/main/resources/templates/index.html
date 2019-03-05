@@ -1,0 +1,315 @@
+<!doctype html>
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Karigor - Portfolio Bootstrap4 Template</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" th:href="@{/img/favicon.ico}" type="image/x-icon">
+	<link rel="apple-touch-icon" th:href="@{/img/icon.png}">
+
+	<!-- Google font (font-family: 'Dosis', sans-serif;) -->
+	<link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700" rel="stylesheet">
+
+	<!-- Plugins -->
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<link rel="stylesheet" th:href="@{/css/plugins.css}">
+
+	<!-- Style Css -->
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+
+	<!-- Custom Styles -->
+	<link rel="stylesheet" th:href="@{/css/custom.css}">
+</head>
+
+<body>
+	<!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+	<!-- Add your site or application content here -->
+
+	<!-- Wrapper -->
+	<div id="wrapper" class="wrapper">
+		
+		<span class="cursor"></span>
+
+		<!-- Header -->
+		<header class="header sticky-header fixed-header">
+			<div class="container">
+				<div class="header-inner d-none d-lg-flex">
+					<div class="header-logo">
+						<a href="index.html">
+							<img th:src="@{/img/logo/logo-dark.png}" alt="logo">
+						</a>
+					</div>
+					<div class="header-navigation">
+						<button class="header-navigation-trigger">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+						<nav class="main-navigation">
+							<ul>
+								<li>
+									<a th:href="@{/users/main.html}">主页</a>
+								</li>
+								<li><a th:href="@{/users/about.html}">关于我们</a></li>
+								<li><a th:href="@{/users/search.html}">图书资源</a></li>
+								<li><a th:href="@{/mess/messlist}">馆内公告</a></li>
+								<li th:if="${session.user}!=null">
+									<a th:text="${session.user.uname}">登录</a>
+									<ul>
+										<li><a th:href="@{/users/getSale.html}">我的订单</a></li>
+									</ul>
+								</li>
+								<li th:if="${session.user}==null">
+									<a th:href="@{/users/login.html}">登录</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="mobile-menu-wrapper d-block d-lg-none">
+					<div class="mobile-menu clearfix">
+						<a href="index.html" class="mobile-logo">
+							<img th:src="@{/img/logo/logo-dark.png}" alt="mobile logo">
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- Hero Area -->
+		<div class="hero-area bg-white">
+			<div class="container">
+				<div class="hero-area-inner">
+					<div class="hero-area-text">
+						<h1>
+							你好, <br>
+							广大志向青年...
+						</h1>
+						<h5>永济市高端图书馆</h5>
+						<a href="about.html" class="readmore">关于我们_</a>
+					</div>
+					<div class="hero-area-image">
+						<img th:src="@{/img/slider/slider-image-1.png}" alt="man mask">
+					</div>
+					<div class="social-icons">
+						<ul>
+							<li><a href="javascript:;"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="javascript:;"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="javascript:;"><i class="fa fa-pinterest-p"></i></a></li>
+							<li><a href="javascript:;"><i class="fa fa-google-plus"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--// Hero Area -->
+
+		<!-- Page Conttent -->
+		<main class="page-content">
+
+			<!-- Portfolios Ara -->
+			<div class="cr-section portfolios-area section-padding-lg bg-white">
+				<div class="container">
+
+					<div class="portfolio-filters text-center">
+						<button data-filter=".portfolio-filter-top" class="is-checked" id="check">评分最高</button>
+						<button data-filter=".portfolio-filter-graphic">最受欢迎作家</button>
+						<button data-filter=".portfolio-filter-photoshop" id="check2">连载书刊</button>
+						<button data-filter=".portfolio-filter-design">最新图书</button>
+					</div>
+
+					<div class="row portfolios-wrapper portfolios-zoom-button-holder">
+						
+						<!-- Single Portfolio -->
+						<div class="col-lg-4 col-md-6 col-12 portfolio-item  portfolio-filter-top" th:each="book : ${bookList}">
+							<div class="portfolio">
+								<div class="portfolio-image">
+									<img th:src="${book.image}" alt="portfolio image">
+								</div>
+								<div class="portfolio-content">
+									<a th:href="${book.image}" class="portfolio-zoom-button"></a>
+									<h5><a th:href="@{/book/getBook(isbn=${book.isbn})}" th:text="${book.title}"></a></h5>
+									<h6><a th:href="@{/book/getBook(isbn=${book.isbn})}" th:text="${book.author}"></a></h6>
+								</div>
+							</div>
+						</div>
+						<!--// Single Portfolio -->
+
+                        <!-- Single Portfolio -->
+                        <div class="col-lg-4 col-md-6 col-12 portfolio-item portfolio-filter-graphic" th:each="author : ${authorsList}">
+                            <div class="portfolio">
+                                <div class="portfolio-image">
+                                    <img th:src="${author.auImg}" alt="portfolio image">
+                                </div>
+                                <div class="portfolio-content">
+                                    <a th:href="${author.auImg}" class="portfolio-zoom-button"></a>
+                                    <h5><a th:text="${author.auIname}"></a></h5>
+                                    <h6><a th:text="${author.auMess}">PORTFOLIO</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Single Portfolio -->
+
+
+                        <!-- Single Portfolio -->
+                        <div class="col-lg-4 col-md-6 col-12 portfolio-item  portfolio-filter-photoshop" th:each="book1 : ${bookList1}">
+                            <div class="portfolio">
+                                <div class="portfolio-image">
+                                    <img th:src="${book1.image}" alt="portfolio image">
+                                </div>
+                                <div class="portfolio-content">
+                                    <a th:href="${book1.image}" class="portfolio-zoom-button"></a>
+                                    <h5><a href="portfolio-details.html" th:text="${book1.title}"></a></h5>
+                                    <h6><a href="portfolio.html" th:text="${book1.author}">PORTFOLIO</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Single Portfolio -->
+
+
+                        <!-- Single Portfolio -->
+                        <div class="col-lg-4 col-md-6 col-12 portfolio-item portfolio-filter-design" th:each="book2 : ${bookList2}">
+                            <div class="portfolio">
+                                <div class="portfolio-image">
+                                    <img th:src="${book2.image}" alt="portfolio image">
+                                </div>
+                                <div class="portfolio-content">
+                                    <a th:href="${book2.image}" class="portfolio-zoom-button"></a>
+                                    <h5><a href="portfolio-details.html" th:text="${book2.title}"></a></h5>
+                                    <h6><a href="portfolio.html" th:text="${book2.author}">PORTFOLIO</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Single Portfolio -->
+						
+
+
+					</div>
+				</div>
+			</div>
+			<!--// Portfolios Ara -->
+
+			<!-- Service Area -->
+			<div class="cr-section services-area section-padding-bottom-lg bg-white">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-7">
+							<div class="section-title text-center">
+								<h2>我们所提供的</h2>
+								<p>这是我所知道和提供的服务</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						
+						<!-- Single Service -->
+						<div class="col-lg-4 col-md-6 col-12">
+							<div class="service text-center">
+								<h5>丰富的图书信息</h5>
+								<p>现代社会，信息更新非常快，快速而准确地掌握住信息.</p>
+							</div>
+						</div>
+						<!--// Single Service -->
+						
+						<!-- Single Service -->
+						<div class="col-lg-4 col-md-6 col-12">
+							<div class="service text-center">
+								<h5>优质的读书环境</h5>
+								<p>青灯耿耿，独照窗户明；万籁俱静，唯有翻书声.</p>
+							</div>
+						</div>
+						<!--// Single Service -->
+						
+						<!-- Single Service -->
+						<div class="col-lg-4 col-md-6 col-12">
+							<div class="service text-center">
+								<h5>开展读者交流活动</h5>
+								<p>加强与成员单位沟通，积极承办活动，让更多的人、更多的方式带动全民开展阅读.</p>
+							</div>
+						</div>
+						<!--// Single Service -->
+						
+						<!-- Single Service -->
+						<div class="col-lg-4 col-md-6 col-12">
+							<div class="service text-center">
+								<h5>良好的地理位置</h5>
+								<p>交通方便，环境较佳，处于城市中心位置，拥有良好的地理位置.</p>
+							</div>
+						</div>
+						<!--// Single Service -->
+						
+						<!-- Single Service -->
+						<div class="col-lg-4 col-md-6 col-12">
+							<div class="service text-center">
+								<h5>服务多样化</h5>
+								<p>开展服务活动时，灵活多样，方便消费者，符合消费者的需要.</p>
+							</div>
+						</div>
+						<!--// Single Service -->
+						
+						<!-- Single Service -->
+						<div class="col-lg-4 col-md-6 col-12">
+							<div class="service text-center">
+								<h5>藏品历史悠久</h5>
+								<p>人类历史和文化遗产保存中心，保存蕴藏着人类各民族、各历史时期知识信息.</p>
+							</div>
+						</div>
+						<!--// Single Service -->
+
+					</div>
+				</div>
+			</div>
+			<!--// Service Area -->
+
+		</main>
+		<!--// Page Conttent -->
+
+		<!-- Footer Area -->
+		<footer class="footer-area bg-white">
+			<div class="container">
+				<ul class="footer-inner">
+					<li>著作権 © 2019 樊可</li>
+					<li><a href="http://sasuke.club/">悲伤的桔子树</a></li>
+				</ul>
+			</div>
+		</footer>
+		<!--// Footer Area -->
+
+	</div>
+	<!--// Wrapper -->
+
+	<!-- Js Files -->
+	<script th:src="@{/js/vendor/modernizr-3.6.0.min.js}"></script>
+	<script th:src="@{/js/vendor/jquery-3.3.1.min.js}"></script>
+	<script th:src="@{/js/popper.min.js}"></script>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	<script th:src="@{/js/plugins.js}"></script>
+	<script th:src="@{/js/main.js}"></script>
+
+    <script>
+        function xieyi(){
+            $("#check").trigger("click");
+        }
+        function xieyi2(){
+            $("#check2").trigger("click");
+        }
+        $(document).ready(function(){
+            // xieyi();
+            // xieyi2();
+            // xieyi();
+        });
+    </script>
+</body>
+
+
+
+</html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.library.library.mapper.EmployeeMapper">
+    <!--添加员工信息-->
+    <insert id="insertEmployee" parameterType="employee">
+    insert into employee(fname,job_id,hire_date) values(#{fname},#{job_id},#{hire_date})
+    </insert>
+    <!--查询员工信息-->
+    <select id="selectEmployees" resultMap="EmpList">
+        SELECT * FROM employee
+    </select>
+
+
+    <resultMap type="employee" id="EmpList">
+        <result property="empId" column="emp_id"/>
+        <result property="fname" column="fname"/>
+        <result property="jobId" column="job_id"/>
+        <result property="hireDate" column="hire_date"/>
+    </resultMap>
+
+    <!--删除员工-->
+    <delete id="deleteEmployee" parameterType="int">
+        DELETE FROM employee WHERE emp_id=#{empId}
+    </delete>
+
+
+    <!--修改员工信息-->
+    <update id="modifyEmployee" parameterType="employee">
+        UPDATE employee
+        <trim prefix="set" suffixOverrides=",">
+            <if test="fname!=null and fname!=''">
+                fname=#{fname},
+            </if>
+            <if test="jobId!=null and jobId!=''">
+                job_id=#{jobId},
+            </if>
+        </trim>
+        where emp_id=#{empId}
+    </update>
+
+    <!--根据id查询员工信息-->
+    <select id="selectEmpById" resultMap="EmpList" parameterType="int">
+    SELECT * FROM employee where emp_id=#{empId}
+    </select>
+
+    <!--分页查询-->
+    <select id="selectEmployeeByFenye" resultMap="EmpList">
+        SELECT * FROM authors
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="fname != null and fname!=''">
+                and fname LIKE CONCAT('%',#{fname},'%')
+            </if>
+            <if test="jobId != null and jobId!=''">
+                and job_id=#{jobId}
+            </if>
+        </trim>
+        LIMIT #{pageNo},#{pageSize}
+    </select>
+
+    <!--查询总数量-->
+    <select id="selectEmployeeCount" resultType="int">
+        SELECT COUNT(1) FROM employee
+    </select>
+
+</mapper>

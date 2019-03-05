@@ -1,0 +1,371 @@
+<!doctype html>
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Karigor - Portfolio Bootstrap4 Template</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" th:href="@{/img/favicon.ico}" type="image/x-icon">
+	<link rel="apple-touch-icon" th:href="@{/img/icon.png}">
+
+	<!-- Google font (font-family: 'Dosis', sans-serif;) -->
+	<link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700" rel="stylesheet">
+	
+	<!-- Plugins -->
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<link rel="stylesheet" th:href="@{/css/plugins.css}">
+
+	<!-- Style Css -->
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+
+	<!-- Custom Styles -->
+	<link rel="stylesheet" th:href="@{/css/custom.css}">
+</head>
+
+<body>
+	<!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+	<!-- Add your site or application content here -->
+
+	<!-- Wrapper -->
+	<div id="wrapper" class="wrapper">
+
+		<!-- Header -->
+		<header class="header sticky-header">
+			<div class="container">
+				<div class="header-inner d-none d-lg-flex">
+					<div class="header-logo">
+						<a href="index.html">
+							<img th:src="@{/img/logo/logo-dark.png}" alt="logo">
+						</a>
+					</div>
+					<div class="header-navigation">
+						<button class="header-navigation-trigger">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+						<nav class="main-navigation">
+							<ul>
+                                <li><a href="index.html">HOME</a>
+                                    <ul>
+                                        <li><a href="index.html">Home Default Version</a></li>
+                                        <li><a href="index-dark.html">Home Dark Version</a></li>
+                                        <li><a href="index-boxed.html">Home Boxed Layout</a></li>
+                                    </ul>
+                                </li>
+								<li><a href="about.html">ABOUT US</a></li>
+                                <li><a href="portfolio.html">PORTFOLIO</a>
+                                    <ul>
+                                        <li><a href="portfolio-2-column.html">Portfolio 2 Column</a></li>
+                                        <li><a href="portfolio.html">Portfolio 3 Column</a></li>
+                                        <li><a href="portfolio-4-column.html">Portfolio 4 Column</a></li>
+                                        <li><a href="portfolio-masonry.html">Portfolio Masonry</a></li>
+                                        <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="blog.html">BLOG</a>
+                                    <ul>
+                                        <li><a href="blog.html">Blog Fullwidth</a></li>
+                                        <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
+                                        <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                                        <li><a href="blog-details.html">Blog Details</a>
+                                            <ul>
+												<li><a href="blog-details.html">Blog Details</a>
+                                                <li><a href="blog-details-right-sidebar.html">Blog Details Right Sidebar</a></li>
+                                                <li><a href="blog-details-left-sidebar.html">Blog Details Left Sidebar</a></li>
+                                            </ul>                                        
+                                        </li>
+                                    </ul>
+                                </li>
+								<li><a href="pricing.html">PRICING</a></li>
+								<li><a href="services.html">SERVICES</a></li>
+								<li><a href="contact.html">CONTACT</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="mobile-menu-wrapper d-block d-lg-none">
+					<div class="mobile-menu clearfix">
+						<a href="index.html" class="mobile-logo">
+							<img th:src="@{/img/logo/logo-dark.png}" alt="mobile logo">
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!--// Header -->
+
+        <!-- Breadcrumb Area -->
+        <div class="breadcrumb-area bg-grey">
+            <div class="container">
+                <div class="cr-breadcrumb">
+                    <h2>BLOG DETAILS</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog-right-sidebar.html">Blog</a></li>
+                        <li>Blog Details</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--// Breadcrumb Area -->
+
+		<!-- Page Conttent -->
+		<main class="page-content">
+
+            <!-- Blog Area -->
+            <div class="cr-section blog-area section-padding-lg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-9 col-lg-8 col-12 order-1 order-lg-2">
+                            <div class="blog-details">
+
+                                <article class="blog-item sticky">
+                                    <div class="blog-item-header">
+                                        <img th:src="@{/img/blog/blog-details/blog-image-1.jpg}" alt="blog thumb">
+                                    </div>
+                                    <div class="blog-item-footer">
+                                        <ul class="blog-item-meta">
+                                            <li><i class="fa fa-user-o"></i>By <a href="blog.html">Admin</a></li>
+                                            <li><i class="fa fa-calendar-o"></i> 30 Nov 2018</li>
+                                            <li><i class="fa fa-comments-o"></i><a href="#">3 Comments</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="blog-item-body">
+                                        <h3 class="blog-item-title">Accusamus iste quia qui quisquam qui velit ducimus iure dolores.</h3>
+                                        <p>Sit nam rerum sed aut est et. Numquam non accusantium qui deleniti nihil harum itaque. Aspernatur debitis volu necessi tatibus omnis est provident odio accusantium qui deleniti nihil harum itaque. Aspernatur debitis volu necessi tatibus omnis est provident odio it nam rerum sed aut est et. Ad quo minima. Rem ut voluptate nihil suscipit quis impedit dolores doloribus. Sed distinctio ducimus nemo laboriosam itaque. Est id eius perspiciatis sequi ullam. Corrupti nihil non ut in accusantium animi alias quaerat. Ipsum commodi adipisci. Consectetur ipsa qui autem quod molestiae deserunt sit et. Fugiat dolore sunt. Natus ex ea laboriosam iste doloremque aut quia. Unde repellendus et et quibusdam dicta provident recusandae quia. Maiores voluptatem iure ad animi et. Consequatur voluptatem eos. Unde repellendus et et quibusdam dicta provident recusandae quia. Maiores voluptatem iure ad animi et. Consequatur voluptatem eos.</p>
+                                        <blockquote>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente aperiam minima libero perspiciatis sequi pariatur Distinctio aut sed vel. Dolorum voluptates et ex commodi.</p>
+                                        </blockquote>
+                                        <p>Doloribus quaerat sapiente sit. Fugit ratione sunt sit dolorem error quia rerum reiciendis. Qui et fugiat ex quae quas labore voluptates temporibus. Harum in voluptatum fuga sed corrupti veniam corrupti dolorem voluptatem. . Harum in voluptatum fuga sed corrupti veniam corrupti dolorem voluptatem. corrupti dolorem voluptatem. Doloribus quaerat sapiente sit. Fugit ratione sunt sit dolorem error quia rerum reiciendis. Qui et fugiat ex quae quas labore voluptates temporibus. Harum in voluptatum fuga sed corrupti veniam corrupti dolorem voluptatem. . Harum in voluptatum fuga sed corrupti veniam corrupti dolorem voluptatem. corrupti dolorem voluptatem.</p>
+                                    </div>
+                                </article>
+
+                                <div class="blog-details-bottom">
+                                    <div class="blog-details-tags">
+                                        <h6>Tags: </h6>
+                                        <ul>
+                                            <li><a href="blog-right-sidebar.html">Design</a></li>
+                                            <li><a href="blog-right-sidebar.html">Development</a></li>
+                                            <li><a href="blog-right-sidebar.html">Creative</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="blog-details-share">
+                                        <h6>Share: </h6>
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="commentlist section-padding-top-sm">
+                                    <h6 class="small-title">3 COMMENTS</h6>
+
+                                    <div class="single-comment">
+                                        <div class="single-comment-thumb">
+                                            <img th:src="@{/img/author-image/author-image-1.png}" alt="hastech logo">
+                                        </div>
+                                        <div class="single-comment-content">
+                                            <div class="single-comment-content-top">
+                                                <h6><a href="blog-right-sidebar.html">ADMIN</a> – February 17, 2015</h6>
+                                                <a href="#" class="reply-button">Reply</a>
+                                            </div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="single-comment single-comment-reply">
+                                        <div class="single-comment-thumb">
+                                            <img th:src="@{/img/author-image/author-image-2.png}" alt="hastech logo">
+                                        </div>
+                                        <div class="single-comment-content">
+                                            <div class="single-comment-content-top">
+                                                <h6><a href="blog-right-sidebar.html">DEMO</a> – February 17, 2015</h6>
+                                                <a href="#" class="reply-button">Reply</a>
+                                            </div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="single-comment">
+                                        <div class="single-comment-thumb">
+                                            <img th:src="@{/img/author-image/author-image-1.png}" alt="hastech logo">
+                                        </div>
+                                        <div class="single-comment-content">
+                                            <div class="single-comment-content-top">
+                                                <h6><a href="blog-right-sidebar.html">ADMIN</a> – February 17, 2015</h6>
+                                                <a href="#" class="reply-button">Reply</a>
+                                            </div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="blog-details-commentbox section-padding-top-sm">
+                                    <h6 class="small-title">LEAVE A REPLY</h6>
+                                    <form action="#" class="karigor-form">
+                                        <div class="karigor-form-inner">
+                                            <div class="karigor-form-input">
+                                                <textarea id="new-review-textbox" cols="30" rows="5" placeholder="Comment"></textarea>
+                                            </div>
+                                            <div class="karigor-form-input karigor-form-input-half">
+                                                <input type="text" id="new-review-name" placeholder="Name*" required>
+                                            </div>
+                                            <div class="karigor-form-input karigor-form-input-half">
+                                                <input type="email" id="new-review-email" placeholder="Email*" required>
+                                            </div>
+                                            <div class="karigor-form-input">
+                                                <button type="submit" class="button">
+                                                    <span>SEND COMMENT</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div> 
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-12 order-2 order-lg-1 sticky-sidebar-active">
+                            <div class="widgets">
+
+                                <!-- Single Widget -->
+                                <section class="single-widget widget-search">
+                                    <h5 class="widget-title">SEARCH</h5>
+                                    <form action="#">
+                                        <input type="text" placeholder="Search...">
+                                        <button type="submit"><i class="fa fa-search"></i></button>
+                                    </form>
+                                </section>
+                                <!--// Single Widget -->
+
+                                <!-- Single Widget -->
+                                <section class="single-widget widget-categories">
+                                    <h5 class="widget-title">CATEGORIES</h5>
+                                    <ul>
+                                        <li><a href="blog-right-sidebar.html">Web Design <span>14</span></a></li>
+                                        <li><a href="blog-right-sidebar.html">Web Development <span>12</span></a></li>
+                                        <li><a href="blog-right-sidebar.html">Clean <span>23</span></a></li>
+                                        <li><a href="blog-right-sidebar.html">Fashion <span>18</span></a></li>
+                                        <li><a href="blog-right-sidebar.html">Journal <span>20</span></a></li>
+                                        <li><a href="blog-right-sidebar.html">Photography <span>8</span></a></li>
+                                    </ul>
+                                </section>
+                                <!--// Single Widget -->
+
+                                <!-- Single Widget -->
+                                <section class="single-widget widget-related-post">
+                                    <h5 class="widget-title">RELATED POST</h5>
+                                    <ul>
+                                        <li>
+                                            <div class="image">
+                                                <a href="blog-details.html">
+                                                    <img th:src="@{/img/blog/thumbnail/blog-image-1.jpg}" alt="blog thumb">
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <h6><a href="blog-details.html">Proin faucibus massa vel tristique</a></h6>
+                                                <span>June 25, 2015</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="image">
+                                                <a href="blog-details.html">
+                                                    <img th:src="@{/img/blog/thumbnail/blog-image-2.jpg}" alt="blog thumb">
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <h6><a href="blog-details.html">Proin faucibus massa vel tristique</a></h6>
+                                                <span>June 25, 2015</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="image">
+                                                <a href="blog-details.html">
+                                                    <img th:src="@{/img/blog/thumbnail/blog-image-3.jpg}" alt="blog thumb">
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <h6><a href="blog-details.html">Proin faucibus massa vel tristique</a></h6>
+                                                <span>June 25, 2015</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="image">
+                                                <a href="blog-details.html">
+                                                    <img th:src="@{/img/blog/thumbnail/blog-image-4.jpg}" alt="blog thumb">
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <h6><a href="blog-details.html">Proin faucibus massa vel tristique</a></h6>
+                                                <span>June 25, 2015</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </section>
+                                <!--// Single Widget -->
+
+                                <!-- Single Widget -->
+                                <section class="single-widget widget-tags">
+                                    <h5 class="widget-title">TAGS</h5>
+                                    <ul>
+                                        <li><a href="blog-right-sidebar.html">Design</a></li>
+                                        <li><a href="blog-right-sidebar.html">Development</a></li>
+                                        <li><a href="blog-right-sidebar.html">Fashion</a></li>
+                                        <li><a href="blog-right-sidebar.html">Journal</a></li>
+                                        <li><a href="blog-right-sidebar.html">Mega</a></li>
+                                        <li><a href="blog-right-sidebar.html">Latest</a></li>
+                                        <li><a href="blog-right-sidebar.html">Branding</a></li>
+                                        <li><a href="blog-right-sidebar.html">Corporate</a></li>
+                                    </ul>
+                                </section>
+                                <!--// Single Widget -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--// Blog Area -->
+
+		</main>
+		<!--// Page Conttent -->
+
+		<!-- Footer Area -->
+		<footer class="footer-area bg-white">
+			<div class="container">
+				<ul class="footer-inner">
+                    <li>著作権 © 2019 樊可</li>
+                    <li><a href="http://sasuke.club/">悲伤的桔子树</a></li>
+				</ul>
+			</div>
+		</footer>
+		<!--// Footer Area -->
+
+	</div>
+	<!--// Wrapper -->
+
+	<!-- Js Files -->
+	<script th:src="@{/js/vendor/modernizr-3.6.0.min.js}"></script>
+	<script th:src="@{/js/vendor/jquery-3.3.1.min.js}"></script>
+	<script th:src="@{/js/popper.min.js}"></script>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	<script th:src="@{/js/plugins.js}"></script>
+	<script th:src="@{/js/main.js}"></script>
+</body>
+
+
+
+</html>

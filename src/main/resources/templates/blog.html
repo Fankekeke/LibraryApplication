@@ -1,0 +1,380 @@
+<!doctype html>
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Karigor - Portfolio Bootstrap4 Template</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" th:href="@{/img/favicon.ico}" type="image/x-icon">
+	<link rel="apple-touch-icon" th:href="@{/img/icon.png}">
+
+	<!-- Google font (font-family: 'Dosis', sans-serif;) -->
+	<link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700" rel="stylesheet">
+	
+	<!-- Plugins -->
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<link rel="stylesheet" th:href="@{/css/plugins.css}">
+
+	<!-- Style Css -->
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+
+	<!-- Custom Styles -->
+	<link rel="stylesheet" th:href="@{/css/custom.css}">
+</head>
+
+<body>
+	<!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+	<!-- Add your site or application content here -->
+
+	<!-- Wrapper -->
+	<div id="wrapper" class="wrapper">
+
+		<!-- Header -->
+		<header class="header sticky-header">
+			<div class="container">
+				<div class="header-inner d-none d-lg-flex">
+					<div class="header-logo">
+						<a href="index.html">
+							<img th:src="@{/img/logo/logo-dark.png}" alt="logo">
+						</a>
+					</div>
+					<div class="header-navigation">
+						<button class="header-navigation-trigger">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+						<nav class="main-navigation">
+							<ul>
+                                <li><a href="index.html">HOME</a>
+                                    <ul>
+                                        <li><a href="index.html">Home Default Version</a></li>
+                                        <li><a href="index-dark.html">Home Dark Version</a></li>
+                                        <li><a href="index-boxed.html">Home Boxed Layout</a></li>
+                                    </ul>
+                                </li>
+								<li><a href="about.html">ABOUT US</a></li>
+                                <li><a href="portfolio.html">PORTFOLIO</a>
+                                    <ul>
+                                        <li><a href="portfolio-2-column.html">Portfolio 2 Column</a></li>
+                                        <li><a href="portfolio.html">Portfolio 3 Column</a></li>
+                                        <li><a href="portfolio-4-column.html">Portfolio 4 Column</a></li>
+                                        <li><a href="portfolio-masonry.html">Portfolio Masonry</a></li>
+                                        <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="blog.html">BLOG</a>
+                                    <ul>
+                                        <li><a href="blog.html">Blog Fullwidth</a></li>
+                                        <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
+                                        <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                                        <li><a href="blog-details.html">Blog Details</a>
+                                            <ul>
+												<li><a href="blog-details.html">Blog Details</a>
+                                                <li><a href="blog-details-right-sidebar.html">Blog Details Right Sidebar</a></li>
+                                                <li><a href="blog-details-left-sidebar.html">Blog Details Left Sidebar</a></li>
+                                            </ul>                                        
+                                        </li>
+                                    </ul>
+                                </li>
+								<li><a href="pricing.html">PRICING</a></li>
+								<li><a href="services.html">SERVICES</a></li>
+								<li><a href="contact.html">CONTACT</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="mobile-menu-wrapper d-block d-lg-none">
+					<div class="mobile-menu clearfix">
+						<a href="index.html" class="mobile-logo">
+							<img th:src="@{/img/logo/logo-dark.png}" alt="mobile logo">
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!--// Header -->
+
+        <!-- Breadcrumb Area -->
+        <div class="breadcrumb-area bg-grey">
+            <div class="container">
+                <div class="cr-breadcrumb">
+                    <h2>BLOG</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li>Blog</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--// Breadcrumb Area -->
+
+		<!-- Page Conttent -->
+		<main class="page-content">
+
+            <!-- Blog Area -->
+            <div class="cr-section blog-area section-padding-lg">
+                <div class="container">
+                    <div class="row justify-content-center">
+
+                        <!-- Single Blog -->
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                            <article class="blog-item sticky">
+                                <header class="blog-item-header">
+                                    <a href="blog-details.html">
+                                        <img th:src="@{/img/blog/blog-image-1.jpg}" alt="blog thumb">
+                                    </a>
+                                </header>
+                                <div class="blog-item-body">
+                                    <h6 class="blog-item-title"><a href="blog-details.html">Accusamus iste quia qui quisquam qui</a></h6>
+                                    <p>Sit nam rerum sed aut est et. Numquam non accusantium qui deleniti nihil harum itaque. Aspernatur debitis volu necessi tatibus omnis est provident odio...</p>
+                                </div>
+                                <footer class="blog-item-footer">
+                                    <ul class="blog-item-meta">
+                                        <li><i class="fa fa-user-o"></i>By <a href="blog.html">Admin</a></li>
+                                        <li><i class="fa fa-calendar-o"></i> 30 Nov 2018</li>
+                                        <li><i class="fa fa-comments-o"></i><a href="#">3 Comments</a></li>
+                                    </ul>
+                                </footer>
+                            </article>
+                        </div>
+                        <!--// Single Blog -->
+
+                        <!-- Single Blog -->
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                            <article class="blog-item">
+                                <header class="blog-item-header">
+                                    <a href="blog-details.html">
+                                        <img th:src="@{/img/blog/blog-image-2.jpg}" alt="blog thumb">
+                                    </a>
+                                </header>
+                                <div class="blog-item-body">
+                                    <h6 class="blog-item-title"><a href="blog-details.html">Voluptatem necessitatibus fugiat</a></h6>
+                                    <p>Sit nam rerum sed aut est et. Numquam non accusantium qui deleniti nihil harum itaque. Aspernatur debitis volu necessi tatibus omnis est provident odio...</p>
+                                </div>
+                                <footer class="blog-item-footer">
+                                    <ul class="blog-item-meta">
+                                        <li><i class="fa fa-user-o"></i>By <a href="blog.html">Admin</a></li>
+                                        <li><i class="fa fa-calendar-o"></i> 30 Nov 2018</li>
+                                        <li><i class="fa fa-comments-o"></i><a href="#">3 Comments</a></li>
+                                    </ul>
+                                </footer>
+                            </article>
+                        </div>
+                        <!--// Single Blog -->
+
+                        <!-- Single Blog -->
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                            <article class="blog-item">
+                                <header class="blog-item-header">
+                                    <a href="blog-details.html">
+                                        <img th:src="@{/img/blog/blog-image-3.jpg}" alt="blog thumb">
+                                    </a>
+                                </header>
+                                <div class="blog-item-body">
+                                    <h6 class="blog-item-title"><a href="blog-details.html">Repellendus placeat consequatur quam</a></h6>
+                                    <p>Sit nam rerum sed aut est et. Numquam non accusantium qui deleniti nihil harum itaque. Aspernatur debitis volu necessi tatibus omnis est provident odio...</p>
+                                </div>
+                                <footer class="blog-item-footer">
+                                    <ul class="blog-item-meta">
+                                        <li><i class="fa fa-user-o"></i>By <a href="blog.html">Admin</a></li>
+                                        <li><i class="fa fa-calendar-o"></i> 30 Nov 2018</li>
+                                        <li><i class="fa fa-comments-o"></i><a href="#">3 Comments</a></li>
+                                    </ul>
+                                </footer>
+                            </article>
+                        </div>
+                        <!--// Single Blog -->
+
+                        <!-- Single Blog -->
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                            <article class="blog-item">
+                                <header class="blog-item-header">
+                                    <a href="blog-details.html">
+                                        <img th:src="@{/img/blog/blog-image-4.jpg}" alt="blog thumb">
+                                    </a>
+                                </header>
+                                <div class="blog-item-body">
+                                    <h6 class="blog-item-title"><a href="blog-details.html">Eius aperiam aspernatur aliquid</a></h6>
+                                    <p>Sit nam rerum sed aut est et. Numquam non accusantium qui deleniti nihil harum itaque. Aspernatur debitis volu necessi tatibus omnis est provident odio...</p>
+                                </div>
+                                <footer class="blog-item-footer">
+                                    <ul class="blog-item-meta">
+                                        <li><i class="fa fa-user-o"></i>By <a href="blog.html">Admin</a></li>
+                                        <li><i class="fa fa-calendar-o"></i> 30 Nov 2018</li>
+                                        <li><i class="fa fa-comments-o"></i><a href="#">3 Comments</a></li>
+                                    </ul>
+                                </footer>
+                            </article>
+                        </div>
+                        <!--// Single Blog -->
+
+                        <!-- Single Blog -->
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                            <article class="blog-item">
+                                <header class="blog-item-header">
+                                    <a href="blog-details.html">
+                                        <img th:src="@{/img/blog/blog-image-5.jpg}" alt="blog thumb">
+                                    </a>
+                                </header>
+                                <div class="blog-item-body">
+                                    <h6 class="blog-item-title"><a href="blog-details.html">Accusamus iste quia qui quisquam qui</a></h6>
+                                    <p>Sit nam rerum sed aut est et. Numquam non accusantium qui deleniti nihil harum itaque. Aspernatur debitis volu necessi tatibus omnis est provident odio...</p>
+                                </div>
+                                <footer class="blog-item-footer">
+                                    <ul class="blog-item-meta">
+                                        <li><i class="fa fa-user-o"></i>By <a href="blog.html">Admin</a></li>
+                                        <li><i class="fa fa-calendar-o"></i> 30 Nov 2018</li>
+                                        <li><i class="fa fa-comments-o"></i><a href="#">3 Comments</a></li>
+                                    </ul>
+                                </footer>
+                            </article>
+                        </div>
+                        <!--// Single Blog -->
+
+                        <!-- Single Blog -->
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                            <article class="blog-item">
+                                <header class="blog-item-header">
+                                    <a href="blog-details.html">
+                                        <img th:src="@{/img/blog/blog-image-6.jpg}" alt="blog thumb">
+                                    </a>
+                                </header>
+                                <div class="blog-item-body">
+                                    <h6 class="blog-item-title"><a href="blog-details.html">Accusamus iste quia qui quisquam qui</a></h6>
+                                    <p>Sit nam rerum sed aut est et. Numquam non accusantium qui deleniti nihil harum itaque. Aspernatur debitis volu necessi tatibus omnis est provident odio...</p>
+                                </div>
+                                <footer class="blog-item-footer">
+                                    <ul class="blog-item-meta">
+                                        <li><i class="fa fa-user-o"></i>By <a href="blog.html">Admin</a></li>
+                                        <li><i class="fa fa-calendar-o"></i> 30 Nov 2018</li>
+                                        <li><i class="fa fa-comments-o"></i><a href="#">3 Comments</a></li>
+                                    </ul>
+                                </footer>
+                            </article>
+                        </div>
+                        <!--// Single Blog -->
+
+                        <!-- Single Blog -->
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                            <article class="blog-item">
+                                <header class="blog-item-header">
+                                    <a href="blog-details.html">
+                                        <img th:src="@{/img/blog/blog-image-7.jpg}"  alt="blog thumb">
+                                    </a>
+                                </header>
+                                <div class="blog-item-body">
+                                    <h6 class="blog-item-title"><a href="blog-details.html">Accusamus iste quia qui quisquam qui</a></h6>
+                                    <p>Sit nam rerum sed aut est et. Numquam non accusantium qui deleniti nihil harum itaque. Aspernatur debitis volu necessi tatibus omnis est provident odio...</p>
+                                </div>
+                                <footer class="blog-item-footer">
+                                    <ul class="blog-item-meta">
+                                        <li><i class="fa fa-user-o"></i>By <a href="blog.html">Admin</a></li>
+                                        <li><i class="fa fa-calendar-o"></i> 30 Nov 2018</li>
+                                        <li><i class="fa fa-comments-o"></i><a href="#">3 Comments</a></li>
+                                    </ul>
+                                </footer>
+                            </article>
+                        </div>
+                        <!--// Single Blog -->
+
+                        <!-- Single Blog -->
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                            <article class="blog-item">
+                                <header class="blog-item-header">
+                                    <a href="blog-details.html">
+                                        <img th:src="@{/img/blog/blog-image-8.jpg}" alt="blog thumb">
+                                    </a>
+                                </header>
+                                <div class="blog-item-body">
+                                    <h6 class="blog-item-title"><a href="blog-details.html">Accusamus iste quia qui quisquam qui</a></h6>
+                                    <p>Sit nam rerum sed aut est et. Numquam non accusantium qui deleniti nihil harum itaque. Aspernatur debitis volu necessi tatibus omnis est provident odio...</p>
+                                </div>
+                                <footer class="blog-item-footer">
+                                    <ul class="blog-item-meta">
+                                        <li><i class="fa fa-user-o"></i>By <a href="blog.html">Admin</a></li>
+                                        <li><i class="fa fa-calendar-o"></i> 30 Nov 2018</li>
+                                        <li><i class="fa fa-comments-o"></i><a href="#">3 Comments</a></li>
+                                    </ul>
+                                </footer>
+                            </article>
+                        </div>
+                        <!--// Single Blog -->
+
+                        <!-- Single Blog -->
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-12 d-block d-md-none d-xl-block">
+                            <article class="blog-item">
+                                <header class="blog-item-header">
+                                    <a href="blog-details.html">
+                                        <img th:src="@{/img/blog/blog-image-9.jpg}" alt="blog thumb">
+                                    </a>
+                                </header>
+                                <div class="blog-item-body">
+                                    <h6 class="blog-item-title"><a href="blog-details.html">Accusamus iste quia qui quisquam qui</a></h6>
+                                    <p>Sit nam rerum sed aut est et. Numquam non accusantium qui deleniti nihil harum itaque. Aspernatur debitis volu necessi tatibus omnis est provident odio...</p>
+                                </div>
+                                <footer class="blog-item-footer">
+                                    <ul class="blog-item-meta">
+                                        <li><i class="fa fa-user-o"></i>By <a href="blog.html">Admin</a></li>
+                                        <li><i class="fa fa-calendar-o"></i> 30 Nov 2018</li>
+                                        <li><i class="fa fa-comments-o"></i><a href="#">3 Comments</a></li>
+                                    </ul>
+                                </footer>
+                            </article>
+                        </div>
+                        <!--// Single Blog -->
+
+                    </div>
+                    <div class="cr-pagination mt-4 text-center">
+                        <ul>
+                            <li><a href="blog.html"><i class="fa fa-angle-double-left"></i></a></li>
+                            <li><a href="blog.html">1</a></li>
+                            <li><a href="blog.html">2</a></li>
+                            <li><a href="blog.html">3</a></li>
+                            <li><a href="blog.html">...</a></li>
+                            <li><a href="blog.html">10</a></li>
+                            <li><a href="blog.html"><i class="fa fa-angle-double-right"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--// Blog Area -->
+
+		</main>
+		<!--// Page Conttent -->
+
+		<!-- Footer Area -->
+		<footer class="footer-area bg-white">
+			<div class="container">
+				<ul class="footer-inner">
+                    <li>著作権 © 2019 樊可</li>
+                    <li><a href="http://sasuke.club/">悲伤的桔子树</a></li>
+				</ul>
+			</div>
+		</footer>
+		<!--// Footer Area -->
+
+	</div>
+	<!--// Wrapper -->
+
+	<!-- Js Files -->
+	<script th:src="@{/js/vendor/modernizr-3.6.0.min.js}"></script>
+	<script th:src="@{/js/vendor/jquery-3.3.1.min.js}"></script>
+	<script th:src="@{/js/popper.min.js}"></script>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	<script th:src="@{/js/plugins.js}"></script>
+	<script th:src="@{/js/main.js}"></script>
+</body>
+
+
+
+</html>

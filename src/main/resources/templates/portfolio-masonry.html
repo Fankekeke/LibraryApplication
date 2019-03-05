@@ -1,0 +1,343 @@
+<!doctype html>
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Karigor - Portfolio Bootstrap4 Template</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" th:href="@{/img/favicon.ico}" type="image/x-icon">
+	<link rel="apple-touch-icon" th:href="@{/img/icon.png}">
+
+	<link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700" rel="stylesheet">
+
+	<!-- Plugins -->
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<link rel="stylesheet" th:href="@{/css/plugins.css}">
+
+	<!-- Style Css -->
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+
+	<!-- Custom Styles -->
+	<link rel="stylesheet" th:href="@{/css/custom.css}">
+</head>
+
+<body>
+	<!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+	<!-- Add your site or application content here -->
+
+	<!-- Wrapper -->
+	<div id="wrapper" class="wrapper">
+
+		<!-- Header -->
+		<header class="header sticky-header">
+			<div class="container">
+				<div class="header-inner d-none d-lg-flex">
+					<div class="header-logo">
+						<a href="index.html">
+							<img th:src="@{/img/logo/logo-dark.png}" alt="logo">
+						</a>
+					</div>
+					<div class="header-navigation">
+						<button class="header-navigation-trigger">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+						<nav class="main-navigation">
+							<ul>
+                                <li><a href="index.html">HOME</a>
+                                    <ul>
+                                        <li><a href="index.html">Home Default Version</a></li>
+                                        <li><a href="index-dark.html">Home Dark Version</a></li>
+                                        <li><a href="index-boxed.html">Home Boxed Layout</a></li>
+                                    </ul>
+                                </li>
+								<li><a href="about.html">ABOUT US</a></li>
+                                <li><a href="portfolio.html">PORTFOLIO</a>
+                                    <ul>
+                                        <li><a href="portfolio-2-column.html">Portfolio 2 Column</a></li>
+                                        <li><a href="portfolio.html">Portfolio 3 Column</a></li>
+                                        <li><a href="portfolio-4-column.html">Portfolio 4 Column</a></li>
+                                        <li><a href="portfolio-masonry.html">Portfolio Masonry</a></li>
+                                        <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="blog.html">BLOG</a>
+                                    <ul>
+                                        <li><a href="blog.html">Blog Fullwidth</a></li>
+                                        <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
+                                        <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                                        <li><a href="blog-details.html">Blog Details</a>
+                                            <ul>
+												<li><a href="blog-details.html">Blog Details</a>
+                                                <li><a href="blog-details-right-sidebar.html">Blog Details Right Sidebar</a></li>
+                                                <li><a href="blog-details-left-sidebar.html">Blog Details Left Sidebar</a></li>
+                                            </ul>                                        
+                                        </li>
+                                    </ul>
+                                </li>
+								<li><a href="pricing.html">PRICING</a></li>
+								<li><a href="services.html">SERVICES</a></li>
+								<li><a href="contact.html">CONTACT</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="mobile-menu-wrapper d-block d-lg-none">
+					<div class="mobile-menu clearfix">
+						<a href="index.html" class="mobile-logo">
+							<img th:src="@{/img/logo/logo-dark.png}" alt="mobile logo">
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!--// Header -->
+
+        <!-- Breadcrumb Area -->
+        <div class="breadcrumb-area bg-grey">
+            <div class="container">
+                <div class="cr-breadcrumb">
+                    <h2>PORTFOLIO MASONRY</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li>Portfolio</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--// Breadcrumb Area -->
+
+		<!-- Page Conttent -->
+		<main class="page-content">
+
+            <!-- Portfolios Ara -->
+			<div class="cr-section portfolios-area section-padding-lg bg-white">
+				<div class="container">
+
+					<div class="portfolio-filters text-center">
+						<button data-filter="*" class="is-checked">ALL</button>
+						<button data-filter=".portfolio-filter-graphic">GRAPHIC</button>
+						<button data-filter=".portfolio-filter-photoshop">PHOTOSHOP</button>
+						<button data-filter=".portfolio-filter-design">DESIGN</button>
+					</div>
+
+					<div class="row portfolios-wrapper portfolios-zoom-button-holder">
+                        
+                        <!-- Single Portfolio -->
+						<div class="col-xl-6 col-lg-8 col-md-6 col-12 portfolio-item portfolio-filter-photoshop portfolio-filter-design">
+							<div class="portfolio">
+								<div class="portfolio-image">
+									<img src="img/portfolio/masonry/portfolio-image-6.jpg" alt="portfolio image">
+								</div>
+								<div class="portfolio-content">
+									<a href="img/portfolio/masonry/lg-size/portfolio-image-lg-6.jpg" class="portfolio-zoom-button"></a>
+									<h5><a href="portfolio-details.html">AWESOME RACING CAR</a></h5>
+									<h6><a href="portfolio.html">PORTFOLIO</a></h6>
+								</div>
+							</div>
+						</div>
+						<!--// Single Portfolio -->
+
+						<!-- Single Portfolio -->
+						<div class="col-xl-3 col-lg-4 col-md-6 col-12 portfolio-item portfolio-filter-graphic portfolio-filter-design">
+							<div class="portfolio">
+								<div class="portfolio-image">
+									<img src="img/portfolio/masonry/portfolio-image-1.jpg" alt="portfolio image">
+								</div>
+								<div class="portfolio-content">
+									<a href="img/portfolio/masonry/lg-size/portfolio-image-lg-1.jpg" class="portfolio-zoom-button"></a>
+									<h5><a href="portfolio-details.html">AWESOME RACING CAR</a></h5>
+									<h6><a href="portfolio.html">PORTFOLIO</a></h6>
+								</div>
+							</div>
+						</div>
+						<!--// Single Portfolio -->
+
+                        <!-- Single Portfolio -->
+						<div class="col-xl-3 col-lg-4 col-md-6 col-12 portfolio-item portfolio-filter-photoshop">
+							<div class="portfolio">
+								<div class="portfolio-image">
+									<img src="img/portfolio/masonry/portfolio-image-5.jpg" alt="portfolio image">
+								</div>
+								<div class="portfolio-content">
+									<a href="img/portfolio/masonry/lg-size/portfolio-image-lg-5.jpg" class="portfolio-zoom-button"></a>
+									<h5><a href="portfolio-details.html">AWESOME RACING CAR</a></h5>
+									<h6><a href="portfolio.html">PORTFOLIO</a></h6>
+								</div>
+							</div>
+						</div>
+						<!--// Single Portfolio -->
+                        
+						<!-- Single Portfolio -->
+						<div class="col-xl-3 col-lg-4 col-md-6 col-12 portfolio-item portfolio-filter-graphic">
+							<div class="portfolio">
+								<div class="portfolio-image">
+									<img src="img/portfolio/masonry/portfolio-image-2.jpg" alt="portfolio image">
+								</div>
+								<div class="portfolio-content">
+									<a href="img/portfolio/masonry/lg-size/portfolio-image-lg-2.jpg" class="portfolio-zoom-button"></a>
+									<h5><a href="portfolio-details.html">AWESOME RACING CAR</a></h5>
+									<h6><a href="portfolio.html">PORTFOLIO</a></h6>
+								</div>
+							</div>
+						</div>
+						<!--// Single Portfolio -->
+						
+						<!-- Single Portfolio -->
+						<div class="col-xl-3 col-lg-4 col-md-6 col-12 portfolio-item portfolio-filter-photoshop portfolio-filter-design">
+							<div class="portfolio">
+								<div class="portfolio-image">
+									<img src="img/portfolio/masonry/portfolio-image-3.jpg" alt="portfolio image">
+								</div>
+								<div class="portfolio-content">
+									<a href="img/portfolio/masonry/lg-size/portfolio-image-lg-3.jpg" class="portfolio-zoom-button"></a>
+									<h5><a href="portfolio-details.html">AWESOME RACING CAR</a></h5>
+									<h6><a href="portfolio.html">PORTFOLIO</a></h6>
+								</div>
+							</div>
+						</div>
+						<!--// Single Portfolio -->
+                    
+                         <!-- Single Portfolio -->
+						<div class="col-xl-6 col-lg-8 col-md-6 col-12 portfolio-item portfolio-filter-graphic portfolio-filter-design">
+							<div class="portfolio">
+								<div class="portfolio-image">
+									<img src="img/portfolio/masonry/portfolio-image-11.jpg" alt="portfolio image">
+								</div>
+								<div class="portfolio-content">
+									<a href="img/portfolio/masonry/lg-size/portfolio-image-lg-11.jpg" class="portfolio-zoom-button"></a>
+									<h5><a href="portfolio-details.html">AWESOME RACING CAR</a></h5>
+									<h6><a href="portfolio.html">PORTFOLIO</a></h6>
+								</div>
+							</div>
+						</div>
+                        <!--// Single Portfolio -->
+
+                        <!-- Single Portfolio -->
+						<div class="col-xl-3 col-lg-4 col-md-6 col-12 portfolio-item portfolio-filter-graphic portfolio-filter-design">
+							<div class="portfolio">
+								<div class="portfolio-image">
+									<img src="img/portfolio/masonry/portfolio-image-4.jpg" alt="portfolio image">
+								</div>
+								<div class="portfolio-content">
+									<a href="img/portfolio/masonry/lg-size/portfolio-image-lg-4.jpg" class="portfolio-zoom-button"></a>
+									<h5><a href="portfolio-details.html">AWESOME RACING CAR</a></h5>
+									<h6><a href="portfolio.html">PORTFOLIO</a></h6>
+								</div>
+							</div>
+						</div>
+						<!--// Single Portfolio -->
+                        
+						<!-- Single Portfolio -->
+						<div class="col-xl-3 col-lg-4 col-md-6 col-12 portfolio-item portfolio-filter-graphic">
+							<div class="portfolio">
+								<div class="portfolio-image">
+									<img src="img/portfolio/masonry/portfolio-image-7.jpg" alt="portfolio image">
+								</div>
+								<div class="portfolio-content">
+									<a href="img/portfolio/masonry/lg-size/portfolio-image-lg-7.jpg" class="portfolio-zoom-button"></a>
+									<h5><a href="portfolio-details.html">AWESOME RACING CAR</a></h5>
+									<h6><a href="portfolio.html">PORTFOLIO</a></h6>
+								</div>
+							</div>
+						</div>
+                        <!--// Single Portfolio -->
+						
+						<!-- Single Portfolio -->
+						<div class="col-xl-3 col-lg-4 col-md-6 col-12 portfolio-item portfolio-filter-design">
+							<div class="portfolio">
+								<div class="portfolio-image">
+									<img src="img/portfolio/masonry/portfolio-image-8.jpg" alt="portfolio image">
+								</div>
+								<div class="portfolio-content">
+									<a href="img/portfolio/masonry/lg-size/portfolio-image-lg-8.jpg" class="portfolio-zoom-button"></a>
+									<h5><a href="portfolio-details.html">AWESOME RACING CAR</a></h5>
+									<h6><a href="portfolio.html">PORTFOLIO</a></h6>
+								</div>
+							</div>
+						</div>
+						<!--// Single Portfolio -->
+                        
+						<!-- Single Portfolio -->
+						<div class="col-xl-3 col-lg-4 col-md-6 col-12 portfolio-item portfolio-filter-graphic portfolio-filter-design">
+							<div class="portfolio">
+								<div class="portfolio-image">
+									<img src="img/portfolio/masonry/portfolio-image-9.jpg" alt="portfolio image">
+								</div>
+								<div class="portfolio-content">
+									<a href="img/portfolio/masonry/lg-size/portfolio-image-lg-9.jpg" class="portfolio-zoom-button"></a>
+									<h5><a href="portfolio-details.html">AWESOME RACING CAR</a></h5>
+									<h6><a href="portfolio.html">PORTFOLIO</a></h6>
+								</div>
+							</div>
+						</div>
+                        <!--// Single Portfolio -->
+						
+						<!-- Single Portfolio -->
+						<div class="col-xl-3 col-lg-4 col-md-6 col-12 portfolio-item portfolio-filter-graphic portfolio-filter-design">
+							<div class="portfolio">
+								<div class="portfolio-image">
+									<img src="img/portfolio/masonry/portfolio-image-10.jpg" alt="portfolio image">
+								</div>
+								<div class="portfolio-content">
+									<a href="img/portfolio/masonry/lg-size/portfolio-image-lg-10.jpg" class="portfolio-zoom-button"></a>
+									<h5><a href="portfolio-details.html">AWESOME RACING CAR</a></h5>
+									<h6><a href="portfolio.html">PORTFOLIO</a></h6>
+								</div>
+							</div>
+						</div>
+                        <!--// Single Portfolio -->
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 text-center mt-5">
+                            <a href="portfolio.html" class="button" data-content="View More">
+                                <span>View More</span>
+                            </a>
+                        </div>
+                    </div>
+
+				</div>
+			</div>
+			<!--// Portfolios Ara -->
+
+		</main>
+		<!--// Page Conttent -->
+
+		<!-- Footer Area -->
+		<footer class="footer-area bg-white">
+			<div class="container">
+				<ul class="footer-inner">
+					<li>著作権 © 2019 樊可</li>
+					<li><a href="http://sasuke.club/">悲伤的桔子树</a></li>
+				</ul>
+			</div>
+		</footer>
+		<!--// Footer Area -->
+
+	</div>
+	<!--// Wrapper -->
+
+	<!-- Js Files -->
+	<script th:src="@{/js/vendor/modernizr-3.6.0.min.js}"></script>
+	<script th:src="@{/js/vendor/jquery-3.3.1.min.js}"></script>
+	<script th:src="@{/js/popper.min.js}"></script>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	<script th:src="@{/js/plugins.js}"></script>
+	<script th:src="@{/js/main.js}"></script>
+</body>
+
+
+
+</html>

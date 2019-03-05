@@ -1,0 +1,469 @@
+<!doctype html>
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Karigor - Portfolio Bootstrap4 Template</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" th:href="@{/img/favicon.ico}" type="image/x-icon">
+	<link rel="apple-touch-icon" th:href="@{/img/icon.png}">
+
+	<!-- Google font (font-family: 'Dosis', sans-serif;) -->
+	<link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700" rel="stylesheet">
+	
+	<!-- Plugins -->
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<link rel="stylesheet" th:href="@{/css/plugins.css}">
+
+	<!-- Style Css -->
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+
+	<!-- Custom Styles -->
+	<link rel="stylesheet" th:href="@{/css/custom.css}">
+</head>
+
+<body>
+	<!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+	<!-- Add your site or application content here -->
+
+	<!-- Wrapper -->
+	<div id="wrapper" class="wrapper">
+
+		<!-- Header -->
+		<header class="header sticky-header">
+			<div class="container">
+				<div class="header-inner d-none d-lg-flex">
+					<div class="header-logo">
+						<a href="index.html">
+							<img th:src="@{/img/logo/logo-dark.png}" alt="logo">
+						</a>
+					</div>
+					<div class="header-navigation">
+						<button class="header-navigation-trigger">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+                        <nav class="main-navigation">
+                            <ul>
+                                <li>
+                                    <a th:href="@{/users/main.html}">主页</a>
+                                </li>
+                                <li><a th:href="@{/users/about.html}">关于我们</a></li>
+                                <li><a th:href="@{/users/search.html}">图书资源</a></li>
+                                <li><a th:href="@{/mess/messlist}">馆内公告</a></li>
+                                <li th:if="${session.user}!=null">
+                                    <a th:text="${session.user.uname}">登录</a>
+                                    <ul>
+                                        <li><a th:href="@{/users/getSale.html}">我的订单</a></li>
+                                    </ul>
+                                </li>
+                                <li th:if="${session.user}==null">
+                                    <a th:href="@{/users/login.html}">登录</a>
+                                </li>
+                            </ul>
+                        </nav>
+					</div>
+				</div>
+				<div class="mobile-menu-wrapper d-block d-lg-none">
+					<div class="mobile-menu clearfix">
+						<a href="index.html" class="mobile-logo">
+							<img th:src="@{/img/logo/logo-dark.png}" alt="mobile logo">
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!--// Header -->
+
+        <!-- Breadcrumb Area -->
+        <div class="breadcrumb-area bg-grey">
+            <div class="container">
+                <div class="cr-breadcrumb">
+                    <h2>关于我们</h2>
+                    <ul>
+                        <li><a th:href="@{users/main.html}">Home</a></li>
+                        <li>关于我们</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--// Breadcrumb Area -->
+
+		<!-- Page Conttent -->
+		<main class="page-content">
+
+            <!-- About Us Area -->
+            <div class="cr-section about-us-area section-padding-lg bg-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="about-image">
+                                <img th:src="@{/img/others/about-image.jpg}" alt="about image">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="about-content">
+                                <h2>欢迎来到 <strong>永济市图书馆官方网站</strong> WORLD</h2>
+                                <p>永济市图书馆是全市唯一的一所公共图书馆 ，是由政府主办的公益性、免费对外开放的公共文化场所。承担着为我市广大人民群众提供文献和信息服务的任务，是永济社会文明发展的重要标志</p>
+                                <ul>
+                                    <li>公共图书馆作为收集、保存和免费传播知识的公益机构正是现在和未来社会制度的必需,也是社会赋予公共图书馆的历史使命.</li>
+                                    <li>图书馆不仅能够提供网络的知识学习共享空间,而且能够提供现实的知识学习公共空间.</li>
+                                    <li>图书馆不仅应该是书香文化中心,还应该是城市、社区的多样休闲文化中心.</li>
+                                    <li>公共文化服务是公共图书馆工作的灵魂，在营造文化氛围、等方面有着其它机构不可替代的作用.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--// About Us Area -->
+
+            <!-- Counter Section -->
+            <div class="cr-section counter-section section-padding-xs bg-grey">
+                <div class="container">
+                    <div class="row justify-content-center">
+
+                        <!-- Single Counter -->
+                        <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+                            <div class="single-count">
+                                <h2><span class="counter-active" th:text="${bookNum}">360</span></h2>
+                                <h6>图书总册</h6>
+                            </div>    
+                        </div>
+                        <!--// Single Counter -->
+
+                        <!-- Single Counter -->
+                        <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+                            <div class="single-count">
+                                <h2><span class="counter-active">500</span>+</h2>
+                                <h6>可容纳人数</h6>
+                            </div>    
+                        </div>
+                        <!--// Single Counter -->
+
+                        <!-- Single Counter -->
+                        <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+                            <div class="single-count">
+                                <h2><span class="counter-active">420</span></h2>
+                                <h6>品牌</h6>
+                            </div>    
+                        </div>
+                        <!--// Single Counter -->
+
+                        <!-- Single Counter -->
+                        <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+                            <div class="single-count">
+                                <h2><span class="counter-active" th:text="${peoperNum}">100</span></h2>
+                                <h6>使用客户人数</h6>
+                            </div>    
+                        </div>
+                        <!--// Single Counter -->
+
+                    </div>
+                </div>
+            </div>
+            <!--// Counter Section -->
+
+            <!-- Team Members -->
+            <div class="cr-section team-members section-padding-lg bg-white">
+                <div class="container">
+                    <div class="row justify-content-center">
+						<div class="col-lg-7">
+							<div class="section-title text-center">
+								<h2>TEAM MEMBERS</h2>
+								<p>Here is the services which i know & provide all the time</p>
+							</div>
+						</div>
+                    </div>
+                    <div class="row justify-content-center">
+                        
+                        <!-- Single Team Member -->
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="team-wrapper mt-30">
+                                <div class="team-member">
+                                    <img th:src="@{/img/team/team-member-1.jpg}" alt="team image" />
+                                    <div class="team-icon">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-tumblr"></i></a>
+                                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                                    </div>
+                                </div>
+                                <div class="team-info text-center">
+                                    <h3>Jonathon Doe</h3>
+                                    <span>Developer</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Single Team Member -->
+                        
+                        <!-- Single Team Member -->
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="team-wrapper mt-30">
+                                <div class="team-member">
+                                    <img th:src="@{/img/team/team-member-2.jpg}" alt="team image" />
+                                    <div class="team-icon">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-tumblr"></i></a>
+                                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                                    </div>
+                                </div>
+                                <div class="team-info text-center">
+                                    <h3>Johnny Seans</h3>
+                                    <span>Developer</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Single Team Member -->
+                        
+                        <!-- Single Team Member -->
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="team-wrapper mt-30">
+                                <div class="team-member">
+                                    <img th:src="@{/img/team/team-member-3.jpg}" alt="team image" />
+                                    <div class="team-icon">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-tumblr"></i></a>
+                                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                                    </div>
+                                </div>
+                                <div class="team-info text-center">
+                                    <h3>Magnus Muller</h3>
+                                    <span>Developer</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Single Team Member -->
+
+                    </div>
+                </div>
+            </div>
+            <!--// Team Members -->
+
+            <!-- Skills Area -->
+            <div class="cr-section skills-area section-padding-bottom-lg bg-white">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-7">
+                            <div class="section-title text-center">
+                                <h2>OUR SKILLS</h2>
+                                <p>Here is the services which i know & provide all the time</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        
+                        <!-- Single Radial Progress -->
+                        <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+                            <div class="radial-progress-single mt-30">
+                                <div class="radial-progress" data-percent="85" data-scale-color="#333333"><span>85%</span></div>
+                                <h5 class="radial-progress-title">DESIGN</h5>
+                            </div>
+                        </div>
+                        <!--// Single Radial Progress -->
+                        
+                        <!-- Single Radial Progress -->
+                        <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+                            <div class="radial-progress-single mt-30">
+                                <div class="radial-progress" data-percent="95" data-scale-color="#333333"><span>95%</span></div>
+                                <h5 class="radial-progress-title">DEVELOPMENT</h5>
+                            </div>
+                        </div>
+                        <!--// Single Radial Progress -->
+                        
+                        <!-- Single Radial Progress -->
+                        <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+                            <div class="radial-progress-single mt-30">
+                                <div class="radial-progress" data-percent="90" data-scale-color="#333333"><span>90%</span></div>
+                                <h5 class="radial-progress-title">ANALYSIS</h5>
+                            </div>
+                        </div>
+                        <!--// Single Radial Progress -->
+                        
+                        <!-- Single Radial Progress -->
+                        <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+                            <div class="radial-progress-single mt-30">
+                                <div class="radial-progress" data-percent="80" data-scale-color="#333333"><span>80%</span></div>
+                                <h5 class="radial-progress-title">MARKETING</h5>
+                            </div>
+                        </div>
+                        <!--// Single Radial Progress -->
+
+                    </div>
+                </div>
+            </div>
+            <!--// Skills Area -->
+
+            <!-- Testimonial Area -->
+            <div class="cr-section testimonial-area bg-white">
+                <div class="container">
+                    <div class="bg-grey section-padding-sm">
+
+                        <div class="row justify-content-center">
+                            <div class="col-lg-7">
+                                <div class="section-title text-center">
+                                    <h2>读者指南</h2>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slider">
+                            
+                            <!-- Single Testimonial -->
+                            <div class="testimonial">
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos facere debitis sunt. Magni fugiat quaerat provident dolore accusantium odio beatae mollitia deleniti quo culpa eligendi, laborum illo fuga debitis aperiam.</p>
+                                <h6>ROYCE VANDERVORT - <strong>APPLE.INC</strong></h6>
+                            </div>
+                            <!--// Single Testimonial -->
+                            
+                            <!-- Single Testimonial -->
+                            <div class="testimonial">
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos facere debitis sunt. Magni fugiat quaerat provident dolore accusantium odio beatae mollitia deleniti quo culpa eligendi, laborum illo fuga debitis aperiam.</p>
+                                <h6>CLEO RITCHIE - <strong>ABCOMPANY.INC</strong></h6>
+                            </div>
+                            <!--// Single Testimonial -->
+                            
+                            <!-- Single Testimonial -->
+                            <div class="testimonial">
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos facere debitis sunt. Magni fugiat quaerat provident dolore accusantium odio beatae mollitia deleniti quo culpa eligendi, laborum illo fuga debitis aperiam.</p>
+                                <h6>MYRL HUELS - <strong>JAADU.INC</strong></h6>
+                            </div>
+                            <!--// Single Testimonial -->
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--// Testimonial Area -->
+
+            <!-- Best Pricing -->
+            <div class="cr-section best-pricing-area section-padding-lg bg-white">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-7">
+                            <div class="section-title text-center">
+                                <h2>BEST PRICING</h2>
+                                <p>Here is the services which i know & provide all the time</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+
+                        <!-- Single Pricing -->
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="single-pricing mt-30">
+                                <div class="pricing-top">
+                                    <h3>BASIC PLAN</h3>
+                                    <p>$33<span>/Month</span></p>
+                                </div>
+                                <div class="pricing-bottom">
+                                    <ul>
+                                        <li>2GB Memory</li>
+                                        <li>1 Core Processor</li>
+                                        <li>20GB SSD Disk</li>
+                                        <li>1TB Transfer</li>
+                                        <li>24 hours support</li>
+                                    </ul>
+                                    <a class="button" href="#" data-content="Purchase Now">
+                                        <span>Purchase Now</span>
+                                    </a>
+                                </div>
+                            </div>    
+                        </div>
+                        <!--// Single Pricing -->
+
+                        <!-- Single Pricing -->
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="single-pricing is-active mt-30">
+                                <div class="pricing-top">
+                                    <h3>BUSINESS PLAN</h3>
+                                    <p>$66<span>/Month</span></p>
+                                </div>
+                                <div class="pricing-bottom">
+                                    <ul>
+                                        <li>5GB Memory</li>
+                                        <li>3 Core Processor</li>
+                                        <li>20GB SSD Disk</li>
+                                        <li>2TB Transfer</li>
+                                        <li>24 hours support</li>
+                                    </ul>
+                                    <a class="button" href="#" data-content="Purchase Now">
+                                        <span>Purchase Now</span>
+                                    </a>
+                                </div>
+                            </div>    
+                        </div>
+                        <!--// Single Pricing -->
+
+                        <!-- Single Pricing -->
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="single-pricing mt-30">
+                                <div class="pricing-top">
+                                    <h3>PREMIUM PLAN</h3>
+                                    <p>$99<span>/Month</span></p>
+                                </div>
+                                <div class="pricing-bottom">
+                                    <ul>
+                                        <li>10GB Memory</li>
+                                        <li>5 Core Processor</li>
+                                        <li>20GB SSD Disk</li>
+                                        <li>3TB Transfer</li>
+                                        <li>24 hours support</li>
+                                    </ul>
+                                    <a class="button" href="#" data-content="Purchase Now">
+                                        <span>Purchase Now</span>
+                                    </a>
+                                </div>
+                            </div>    
+                        </div>
+                        <!--// Single Pricing -->
+
+                    </div>
+                </div>
+            </div>
+            <!--// Best Pricing -->
+
+		</main>
+		<!--// Page Conttent -->
+
+		<!-- Footer Area -->
+		<footer class="footer-area bg-white">
+			<div class="container">
+				<ul class="footer-inner">
+                    <li>著作権 © 2019 樊可</li>
+                    <li><a href="http://sasuke.club/">悲伤的桔子树</a></li>
+				</ul>
+			</div>
+		</footer>
+		<!--// Footer Area -->
+
+	</div>
+	<!--// Wrapper -->
+
+	<!-- Js Files -->
+	<script th:src="@{/js/vendor/modernizr-3.6.0.min.js}"></script>
+	<script th:src="@{/js/vendor/jquery-3.3.1.min.js}"></script>
+	<script th:src="@{/js/popper.min.js}"></script>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	<script th:src="@{/js/plugins.js}"></script>
+	<script th:src="@{/js/main.js}"></script>
+</body>
+
+
+
+</html>

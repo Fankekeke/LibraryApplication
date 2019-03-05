@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.library.library.mapper.AuthorMapper">
+    <!--添加作者信息-->
+    <insert id="insertAuthor" parameterType="authors">
+    insert into authors(au_iname,au_fname,au_usname,address,au_time,au_mess,au_img,au_sex) values(#{auIname},#{auFname},#{auUsname},#{address},#{auTime},#{auMess},#{auImg},#{auSex})
+    </insert>
+    <!--查询所有作者信息-->
+    <select id="selectAuthors" resultMap="AuthorList">
+        SELECT * FROM authors
+    </select>
+
+    <resultMap type="authors" id="AuthorList">
+        <result property="auId" column="au_id"/>
+        <result property="auIname" column="au_iname"/>
+        <result property="auFname" column="au_fname"/>
+        <result property="auUsname" column="au_usname"/>
+        <result property="address" column="address"/>
+        <result property="auTime" column="au_time"/>
+        <result property="auMess" column="au_mess"/>
+        <result property="auImg" column="au_img"/>
+        <result property="auSex" column="au_sex"/>
+    </resultMap>
+
+    <!--删除作者-->
+    <delete id="deleteAuthor" parameterType="int">
+        DELETE FROM authors WHERE au_id=#{auId}
+    </delete>
+
+    <!--根据id查询作者信息-->
+    <select id="selectAuthorById" resultMap="AuthorList" parameterType="int">
+    SELECT * FROM authors where au_id=#{auId}
+    </select>
+
+    <!--修改作者信息-->
+    <update id="updateAuthor" parameterType="authors">
+        UPDATE authors
+        <trim prefix="set" suffixOverrides=",">
+            <if test="auIname!=null and auIname!=''">
+                au_iname=#{auIname},
+            </if>
+            <if test="auFname!=null and auFname!=''">
+                au_fname=#{auFname},
+            </if>
+            <if test="auUsname!=null and auUsname!=''">
+                au_usname=#{auUsname},
+            </if>
+            <if test="address!=null and address!=''">
+                address=#{address},
+            </if>
+            <if test="auTime!=null and auTime!=''">
+                au_time=#{auTime},
+            </if>
+            <if test="auMess!=null and auMess!=''">
+                au_mess=#{auMess},
+            </if>
+            <if test="auImg!=null and auImg!=''">
+                au_img=#{auImg},
+            </if>
+        </trim>
+        where au_id=#{auId}
+    </update>
+
+    <!--分页查询-->
+    <select id="selectAuthorsByFenye" resultMap="AuthorList">
+        SELECT * FROM authors
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="auIname != null and auIname!=''">
+                and au_iname LIKE CONCAT('%',#{auIname},'%')
+            </if>
+            <if test="auSex != null and auSex!=''">
+                and au_sex=#{auSex}
+            </if>
+        </trim>
+        LIMIT #{pageNo},#{pageSize}
+    </select>
+
+    <!--查询总数量-->
+    <select id="selectAuCount" resultType="int">
+        SELECT COUNT(1) FROM authors
+    </select>
+
+</mapper>

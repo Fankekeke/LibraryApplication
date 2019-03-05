@@ -1,0 +1,185 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<!doctype html>
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Karigor - Portfolio Bootstrap4 Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" th:href="@{/img/favicon.ico}" type="image/x-icon">
+    <link rel="apple-touch-icon" th:href="@{/img/icon.png}">
+
+    <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700" rel="stylesheet">
+
+    <!-- Plugins -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/plugins.css}">
+
+    <!-- Style Css -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" th:href="@{/css/custom.css}">
+</head>
+
+<body>
+	<!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+	<!-- Add your site or application content here -->
+
+	<!-- Wrapper -->
+	<div id="wrapper" class="wrapper">
+
+		<!-- Header -->
+		<header class="header sticky-header">
+			<div class="container">
+				<div class="header-inner d-none d-lg-flex">
+					<div class="header-logo">
+						<a href="index.html">
+							<img th:src="@{/img/logo/logo-dark.png}" alt="logo">
+						</a>
+					</div>
+					<div class="header-navigation">
+						<button class="header-navigation-trigger">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+						<nav class="main-navigation">
+                            <ul>
+                                <li>
+                                    <a th:href="@{/users/main.html}">主页</a>
+                                </li>
+                                <li><a th:href="@{/users/about.html}">关于我们</a></li>
+                                <li><a th:href="@{/users/search.html}">图书资源</a></li>
+                                <li><a th:href="@{/mess/messlist}">馆内公告</a></li>
+                                <li th:if="${session.user}!=null">
+                                    <a th:text="${session.user.uname}">登录</a>
+                                    <ul>
+                                        <li><a th:href="@{/users/getSale.html}">我的订单</a></li>
+                                    </ul>
+                                </li>
+                                <li th:if="${session.user}==null">
+                                    <a th:href="@{/users/login.html}">登录</a>
+                                </li>
+                            </ul>
+						</nav>
+					</div>
+				</div>
+				<div class="mobile-menu-wrapper d-block d-lg-none">
+					<div class="mobile-menu clearfix">
+						<a href="index.html" class="mobile-logo">
+							<img th:src="@{/img/logo/logo-dark.png}" alt="mobile logo">
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!--// Header -->
+
+        <!-- Breadcrumb Area -->
+        <div class="breadcrumb-area bg-grey">
+            <div class="container">
+                <div class="cr-breadcrumb">
+                    <h2>SERVICES</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li>Services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--// Breadcrumb Area -->
+
+		<!-- Page Conttent -->
+		<main class="page-content">
+
+            <!-- Service Area -->
+            <div class="cr-section services-area section-padding-lg bg-white">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-7">
+                            <div class="section-title text-center">
+                                <h2><span th:text="${session.user.uname}"></span>的借阅信息</h2>
+                                <p>Here is the services which i know & provide all the time</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <!-- Single Blog -->
+                        <div class="col-xl-3 col-lg-12 col-md-3 col-12" th:each="sale:${saleList}">
+                            <article class="blog-item sticky">
+                                <header class="blog-item-header">
+                                    <a>
+                                        <img th:src="${sale.doubanbookInfo.image}" alt="blog thumb">
+                                    </a>
+                                </header>
+                                <div class="blog-item-body">
+                                    <h6 class="blog-item-title"><a th:text="${sale.doubanbookInfo.title}"></a></h6>
+                                </div>
+                                <footer class="blog-item-footer">
+                                    <ul class="blog-item-meta">
+                                        <li><i class="fa fa-user-o"></i>By <a th:text="${sale.doubanbookInfo.author}">Admin</a></li>
+                                        <li><i class="fa fa-calendar-o">借阅日期</i><span th:text="${#dates.format(sale.ordDate,'yyy-MM-dd')}"></span></li>
+                                        <li><i class="fa fa-comments-o">归还日期</i><span th:text="${#dates.format(sale.returnDate,'yyy-MM-dd')}"></span></li>
+                                    </ul>
+                                </footer>
+                            </article>
+                        </div>
+                        <!--// Single Blog -->
+
+                    </div>
+                    <div class="cr-pagination mt-4 text-center">
+                        <ul>
+                            <li><a th:href="@{'/mess/messlist/1'}"><i class="fa fa-angle-double-left"></i></a></li>
+                            <li th:each="i:${#numbers.sequence(1,saleNum)}"><a th:href="@{'/mess/messlist/'+${i}}" th:text="${i}"></a></li>
+                            <!--<li><a href="blog.html">2</a></li>-->
+                            <!--<li><a href="blog.html">3</a></li>-->
+                            <!--<li><a href="blog.html">...</a></li>-->
+                            <!--<li><a href="blog.html">10</a></li>-->
+                            <li><a th:href="@{'/mess/messlist/'+${saleNum}}"><i class="fa fa-angle-double-right"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--// Service Area -->
+
+		</main>
+		<!--// Page Conttent -->
+
+		<!-- Footer Area -->
+		<footer class="footer-area bg-white">
+			<div class="container">
+				<ul class="footer-inner">
+                    <li>著作権 © 2019 樊可</li>
+                    <li><a href="http://sasuke.club/">悲伤的桔子树</a></li>
+				</ul>
+			</div>
+		</footer>
+		<!--// Footer Area -->
+
+	</div>
+	<!--// Wrapper -->
+
+	<!-- Js Files -->
+    <script th:src="@{/js/vendor/modernizr-3.6.0.min.js}"></script>
+    <script th:src="@{/js/vendor/jquery-3.3.1.min.js}"></script>
+    <script th:src="@{/js/popper.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/js/plugins.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
+</body>
+
+
+
+</html>

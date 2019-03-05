@@ -1,0 +1,95 @@
+/**
+ * Dark Color
+ */
+
+body{
+    background: #222222;
+    color: #ffffff;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+    color: #ffffff;
+}
+
+.readmore, .readmore:visited, .readmore:link,
+.footer-inner li a,
+.portfolio-filters button,
+nav.main-navigation ul li a,
+.section-title p,
+.portfolio .portfolio-content h5 a,
+.portfolio .portfolio-content h6 a{
+    color: #ffffff;
+}
+
+.header-navigation-trigger span,
+.portfolio-filters button::before{
+    background: #ffffff;
+}
+
+.bg-white{
+    background: #222222 !important;
+}
+
+
+.hero-area-inner,
+.footer-inner{
+    border-color: #333333;
+}
+
+.portfolio{
+    box-shadow: 0 0px 15px rgba(200,200,200,0.15);
+}
+.portfolio{
+    background: #222222;
+}
+.portfolio .portfolio-content{
+    background: #222222;
+}
+.portfolio .portfolio-content a.portfolio-zoom-button::before,
+.portfolio .portfolio-content a.portfolio-zoom-button::after,
+.service h5::before{
+    background: #ffffff;
+}
+
+.sticky-header.is-sticky{
+    background: #222222;
+    box-shadow: 0 0 3px rgba(255,255,255, 0.1);
+}
+
+.service{
+    background: #222222;
+    box-shadow: 0 5px 30px rgba(119,119,119,0.3);
+}
+
+.mobile-menu{
+    border-color: #333333;
+}
+
+.mean-container a.meanmenu-reveal span{
+    background: #ffffff;
+}
+
+.mean-container a.meanmenu-reveal.meanclose .white{
+    display: block;
+}
+.mean-container a.meanmenu-reveal.meanclose .black{
+    display: none;
+}
+
+.hero-area-inner .social-icons ul li a,
+.hero-area-inner .social-icons::before{
+    color: #dddddd;
+}
+.hero-area-inner .social-icons ul li a:hover{
+    color: #ffffff;
+}
+
+nav.main-navigation > ul > li:hover > a{
+    color: #ffffff;
+}
+nav.main-navigation > ul > li:hover > a::before{
+    background: #ffffff;
+}
+
+nav.main-navigation ul li ul {
+    border-top: 3px solid #999999;
+}

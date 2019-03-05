@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.library.library.mapper.UsersnMapper">
+    <!--添加手机用户-->
+    <insert id="insertUsersnByPhone" parameterType="usersn">
+    insert into usersn(uname,gender,age,ip_address,windows,phone,mail,pwd,idcard,address,born) values(#{uname},#{gender},#{age},#{ipAddress},#{windows},#{phone},#{mail},#{pwd},#{idcard},#{address},#{born})
+    </insert>
+
+    <!--添加邮箱用户-->
+    <insert id="insertUsersnByEmail" parameterType="usersn">
+    insert into usersn(uname,gender,age,ip_address,windows,pwd,idcard,address,born) values(#{uname},#{gender},#{age},#{ipAddress},#{windows},#{pwd},#{idCard},#{address},#{born})
+    </insert>
+    <!--查询用户-->
+    <select id="selectUsersn" resultMap="UserList">
+        SELECT * FROM usersn
+    </select>
+
+    <resultMap type="usersn" id="UserList">
+        <result property="uid" column="uid"/>
+        <result property="uname" column="uname"/>
+        <result property="ups" column="ups"/>
+        <result property="gender" column="gender"/>
+        <result property="uppwer" column="uppwer"/>
+        <result property="ipAddress" column="ip_address"/>
+        <result property="windows" column="windows"/>
+        <result property="phone" column="phone"/>
+        <result property="mail" column="mail"/>
+        <result property="pwd" column="pwd"/>
+        <result property="idcard" column="idcard"/>
+        <result property="address" column="address"/>
+        <result property="born" column="born"/>
+    </resultMap>
+
+    <!--删除用户-->
+    <delete id="removeUsersn" parameterType="int">
+        DELETE FROM usersn WHERE uid=#{uid}
+    </delete>
+
+    <!--修改用户邮箱-->
+    <update id="modifUsersnMail" parameterType="usersn">
+        UPDATE usersn
+        <trim prefix="set" suffixOverrides=",">
+            <if test="mail!=null and mail!=''">
+                mail=#{mail},
+            </if>
+            <if test="ipAddress!=null and ipAddress!=''">
+                ip_address=#{ipAddress},
+            </if>
+            <if test="windows!=null and windows!=''">
+                windows=#{windows},
+            </if>
+        </trim>
+        where uid=#{uid}
+    </update>
+
+    <!--修改用户手机号码-->
+    <update id="modifUsersnPhone" parameterType="usersn">
+        UPDATE usersn
+        <trim prefix="set" suffixOverrides=",">
+            <if test="phone!=null and phone!=''">
+                phone=#{phone},
+            </if>
+            <if test="ipAddress!=null and ipAddress!=''">
+                ip_address=#{ipAddress},
+            </if>
+            <if test="windows!=null and windows!=''">
+                windows=#{windows},
+            </if>
+        </trim>
+        where uid=#{uid}
+    </update>
+
+    <!--根据id获取用户-->
+    <select id="selectUsersnById" resultMap="UserList" parameterType="int">
+    SELECT * FROM usersn where uid=#{uid}
+    </select>
+
+    <!--注册判断手机号码是否重复-->
+    <select id="selectUsersnByPhone" resultType="int">
+    SELECT COUNT(1) FROM usersn WHERE phone=#{phone}
+    </select>
+
+    <!--注册判断邮箱地址是否重复-->
+    <select id="selectUsersnByMail" resultType="int">
+    SELECT COUNT(1) FROM usersn WHERE mail=#{mail}
+    </select>
+
+    <!--用户手机登录-->
+    <select id="loginUsersn" resultMap="UserList">
+    SELECT * FROM usersn where phone=#{uname} AND pwd=#{pwd}
+    </select>
+
+    <!--用户邮箱登录-->
+    <select id="loginUsersnEmail" resultMap="UserList">
+    SELECT * FROM usersn where mail=#{mail} AND pwd=#{pwd}
+    </select>
+
+    <!--分页查询-->
+    <select id="selectUserByFenye" resultMap="UserList">
+        SELECT * FROM usersn
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="uname != null and uname!=''">
+                and uname LIKE CONCAT('%',#{uname},'%')
+            </if>
+            <if test="idCard != null and idCard!=''">
+                and idcard=#{idCard}
+            </if>
+        </trim>
+        LIMIT #{pageNo},#{pageSize}
+    </select>
+
+    <!--查询总数量-->
+    <select id="selectUserCount" resultType="int">
+        SELECT COUNT(1) FROM usersn
+    </select>
+</mapper>

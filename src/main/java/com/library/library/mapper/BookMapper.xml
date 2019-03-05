@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.library.library.mapper.BookMapper">
+    <!--添加图书信息-->
+    <insert id="insertBook" parameterType="doubanbookInfo">
+    insert into doubanbookinfo(isbn,title,author,author_intro,tag,numraters,average,id,binding,pages,publisher,origin_title,url,image,summary) values(#{isbn},#{title},#{author},#{authorIntro},#{tag},#{numRaters},#{average},#{id},#{binding},#{pages},#{publisher},#{originTitle},#{url},#{image},#{summary})
+    </insert>
+    <!--查询评分最高的前10本书-->
+    <select id="selectTopBooks" resultMap="BookList">
+        SELECT * FROM doubanbookinfo ORDER BY average DESC LIMIT 10,6
+    </select>
+
+    <!--根据书名或作者模糊查询-->
+    <select id="selectBooksByMess" resultMap="BookList">
+        SELECT * FROM doubanbookinfo
+        <trim prefix="set" suffixOverrides=",">
+            <if test="title!=null and title!=''">
+                title LIKE CONCAT('%',#{title},'%')
+            </if>
+            <if test="author!=null and author!=''">
+                author LIKE CONCAT('%',#{author},'%')
+            </if>
+        </trim>
+    </select>
+
+    <resultMap type="doubanbookInfo" id="BookList">
+        <result property="isbn" column="isbn"/>
+        <result property="title" column="title"/>
+        <result property="author" column="author"/>
+        <result property="authorIntro" column="author_intro"/>
+        <result property="tag" column="tag"/>
+        <result property="numRaters" column="numraters"/>
+        <result property="average" column="average"/>
+        <result property="id" column="id"/>
+        <result property="binding" column="binding"/>
+        <result property="pages" column="pages"/>
+        <result property="publisher" column="publisher"/>
+        <result property="originTitle" column="origin_title"/>
+        <result property="url" column="url"/>
+        <result property="image" column="image"/>
+        <result property="summary" column="summary"/>
+    </resultMap>
+
+    <!--删除图书信息-->
+    <delete id="deleteBook" parameterType="String">
+        DELETE FROM doubanbookinfo WHERE isbn=#{isbn}
+    </delete>
+
+
+    <!--修改图书信息-->
+    <update id="modifBook" parameterType="doubanbookInfo">
+        UPDATE doubanbookInfo
+        <trim prefix="set" suffixOverrides=",">
+            <if test="title!=null and title!=''">
+                title=#{title},
+            </if>
+            <if test="authorIntro!=null and authorIntro!=''">
+                author_intro=#{authorIntro},
+            </if>
+            <if test="tag!=null and tag!=''">
+                tag=#{tag},
+            </if>
+            <if test="numRaters!=null and numRaters!=''">
+                numraters=#{numRaters},
+            </if>
+            <if test="average!=null and average!=''">
+                average=#{average},
+            </if>
+            <if test="binding!=null and binding!=''">
+                binding=#{binding},
+            </if>
+        </trim>
+        where isbn=#{isbn}
+    </update>
+
+    <!--根据id获取用户-->
+    <select id="selectBookByIsbn" resultMap="BookList" parameterType="String">
+    SELECT * FROM doubanbookinfo where isbn=#{isbn}
+    </select>
+
+    <!--分页查询图书信息-->
+    <select id="selectBookByFenye" resultMap="BookList">
+    SELECT * FROM doubanbookinfo LIMIT #{pageNo},#{pageSize}
+    </select>
+
+    <!--分页查询-->
+    <select id="selectBookByMessFenye" resultMap="BookList">
+        SELECT * FROM doubanbookinfo
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="title != null and title!=''">
+                and title LIKE CONCAT('%',#{title},'%')
+            </if>
+            <if test="title != null and title!='' and author != null and author!=''">
+                or author LIKE CONCAT('%',#{author},'%')
+            </if>
+            <if test="title == null and title=='' and author != null and author!=''">
+                or author LIKE CONCAT('%',#{author},'%')
+            </if>
+        </trim>
+        LIMIT #{pageNo},#{pageSize}
+    </select>
+
+    <!--查询模糊数量-->
+    <select id="selectCountByFenye" resultType="int">
+        SELECT COUNT(1) FROM doubanbookinfo
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="title != null and title!=''">
+                and title LIKE CONCAT('%',#{title},'%')
+            </if>
+            <if test="author != null and author!=''">
+                or author LIKE CONCAT('%',#{author},'%')
+            </if>
+        </trim>
+    </select>
+
+    <!--查询总数量-->
+    <select id="selectBookCount" resultType="int">
+        SELECT COUNT(1) FROM doubanbookinfo
+    </select>
+
+</mapper>

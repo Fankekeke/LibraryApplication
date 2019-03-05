@@ -1,0 +1,226 @@
+<!doctype html>
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Karigor - Portfolio Bootstrap4 Template</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" th:href="@{/img/favicon.ico}" type="image/x-icon">
+	<link rel="apple-touch-icon" th:href="@{/img/icon.png}">
+
+	<!-- Google font (font-family: 'Dosis', sans-serif;) -->
+	<link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700" rel="stylesheet">
+	
+	<!-- Plugins -->
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<link rel="stylesheet" th:href="@{/css/plugins.css}">
+
+	<!-- Style Css -->
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+
+	<!-- Custom Styles -->
+	<link rel="stylesheet" th:href="@{/css/custom.css}">
+    <script src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='https://unpkg.com/valine/dist/Valine.min.js'></script>
+</head>
+
+<body>
+	<!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+	<!-- Add your site or application content here -->
+
+	<!-- Wrapper -->
+	<div id="wrapper" class="wrapper">
+
+		<!-- Header -->
+		<header class="header sticky-header">
+			<div class="container">
+				<div class="header-inner d-none d-lg-flex">
+					<div class="header-logo">
+						<a href="index.html">
+							<img th:src="@{/img/logo/logo-dark.png}" alt="logo">
+						</a>
+					</div>
+					<div class="header-navigation">
+						<button class="header-navigation-trigger">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+						<nav class="main-navigation">
+                            <ul>
+                                <li>
+                                    <a th:href="@{/users/main.html}">主页</a>
+                                </li>
+                                <li><a th:href="@{/users/about.html}">关于我们</a></li>
+                                <li><a th:href="@{/users/search.html}">图书资源</a></li>
+                                <li><a th:href="@{/mess/messlist}">馆内公告</a></li>
+                                <li th:if="${session.user}!=null">
+                                    <a th:text="${session.user.uname}">登录</a>
+                                    <ul>
+                                        <li><a href="blog-details.html">我的信息</a>
+                                        <li><a href="blog-details-right-sidebar.html">我的订单</a></li>
+                                    </ul>
+                                </li>
+                                <li th:if="${session.user}==null">
+                                    <a th:href="@{/users/login.html}">登录</a>
+                                </li>
+                            </ul>
+						</nav>
+					</div>
+				</div>
+				<div class="mobile-menu-wrapper d-block d-lg-none">
+					<div class="mobile-menu clearfix">
+						<a href="index.html" class="mobile-logo">
+							<img th:src="@{/img/logo/logo-dark.png}" alt="mobile logo">
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!--// Header -->
+
+        <!-- Breadcrumb Area -->
+        <div class="breadcrumb-area bg-grey">
+            <div class="container">
+                <div class="cr-breadcrumb">
+                    <h2>馆内公告</h2>
+                    <ul>
+                        <li><a th:href="@{users/main.html}">Home</a></li>
+                        <li>公告</li>
+                        <li th:text="${mess.mesTitle}"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--// Breadcrumb Area -->
+
+		<!-- Page Conttent -->
+		<main class="page-content">
+
+            <!-- Blog Area -->
+            <div class="cr-section blog-area section-padding-lg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="blog-details">
+
+                                <article class="blog-item sticky">
+                                    <div class="blog-item-header">
+                                        <img th:src="@{/img/blog/blog-details/blog-image-1.jpg}" alt="blog thumb">
+                                    </div>
+                                    <div class="blog-item-footer">
+                                        <ul class="blog-item-meta">
+                                            <li><i class="fa fa-user-o"></i>By <a th:text="${mess.mesBy}">Admin</a></li>
+                                            <li><i class="fa fa-calendar-o"></i><span th:text="${#dates.format(mess.mesTime,'yyy-MM-dd')}"></span></li>
+                                            <li><i class="fa fa-comments-o"></i><a href="#">3 Comments</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="blog-item-body">
+                                        <h3 class="blog-item-title" th:text="${mess.mesTitle}">Accusamus iste quia qui quisquam qui velit ducimus iure dolores.</h3>
+                                        <p  th:text="${mess.mesContent}"></p>
+                                        <blockquote>
+                                            <p id="hitokoto">小螺号嘀嘀嘀嘀嘀嘀嘀嘀嘀嘀嘀 的吹</p>
+                                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- <span id="from"></span></p>
+                                        </blockquote>
+                                    </div>
+                                </article>
+
+                                <div class="blog-details-bottom">
+                                    <div class="blog-details-tags">
+                                        <h6>Tags: </h6>
+                                        <ul>
+                                            <li><a href="blog-right-sidebar.html">Design</a></li>
+                                            <li><a href="blog-right-sidebar.html">Development</a></li>
+                                            <li><a href="blog-right-sidebar.html">Creative</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="blog-details-share">
+                                        <h6>Share: </h6>
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="comment"></div>
+                                <script>
+                                    new Valine({
+                                        el: '.comment', //
+                                        app_id: 'WYtiSdNBNhvWUBhvbMSMTl3Q-gzGzoHsz', // 这里填写上面得到的APP ID
+                                        app_key: 'NsMHP4Plt7WhpCnyRBNPr6ds', // 这里填写上面得到的APP KEY
+                                        placeholder: '説話を言う...', // [v1.0.7 new]留言框占位提示文字
+                                        notify: false, // 邮件提醒!!!
+                                        verify: true, // 验证码
+                                        visitor: true,
+                                        avatar: 'robohash'
+                                    });
+                                </script>
+
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--// Blog Area -->
+
+		</main>
+		<!--// Page Conttent -->
+
+		<!-- Footer Area -->
+		<footer class="footer-area bg-white">
+			<div class="container">
+				<ul class="footer-inner">
+                    <li>著作権 © 2019 樊可</li>
+                    <li><a href="http://sasuke.club/">悲伤的桔子树</a></li>
+				</ul>
+			</div>
+		</footer>
+		<!--// Footer Area -->
+
+	</div>
+	<!--// Wrapper -->
+
+	<!-- Js Files -->
+	<script th:src="@{/js/vendor/modernizr-3.6.0.min.js}"></script>
+	<script th:src="@{/js/vendor/jquery-3.3.1.min.js}"></script>
+	<script th:src="@{/js/popper.min.js}"></script>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	<script th:src="@{/js/plugins.js}"></script>
+	<script th:src="@{/js/main.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+
+    <script>
+        fetch('https://v1.hitokoto.cn')
+            .then(function (res){
+                return res.json();
+            })
+            .then(function (data) {
+                var hitokoto = document.getElementById('hitokoto');
+                var from = document.getElementById('from');
+                hitokoto.innerText = data.hitokoto;
+                from.innerText = data.from;
+            })
+            .catch(function (err) {
+                console.error(err);
+            })
+    </script>
+</body>
+
+
+
+</html>

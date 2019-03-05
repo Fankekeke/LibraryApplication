@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.library.library.mapper.MessingMapper">
+    <!--添加公告-->
+    <insert id="insertMess" parameterType="messing">
+    insert into messing(mes_time,mes_by,mes_content,mes_title) values(#{mesTime},#{MesBy},#{mesContent},#{mesTitle})
+    </insert>
+    <!--查询订单信息-->
+    <select id="selectAll" resultMap="MessList">
+        SELECT * FROM messing
+    </select>
+
+    <resultMap type="messing" id="MessList">
+        <result property="mesId" column="mes_id"/>
+        <result property="mesId" column="count"/>
+        <result property="mesTime" column="mes_time"/>
+        <result property="MesBy" column="mes_by"/>
+        <result property="mesContent" column="mes_content"/>
+        <result property="mesTitle" column="mes_title"/>
+    </resultMap>
+
+    <!--分页查询-->
+    <select id="selectMesslist" resultMap="MessList">
+        SELECT * FROM messing
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="mesTitle != null and mesTitle!=''">
+                and mes_title LIKE CONCAT('%',#{mesTitle},'%')
+            </if>
+        </trim>
+        LIMIT #{pageNo},#{pageSize}
+    </select>
+
+    <!--根据id查询公告信息-->
+    <select id="selectMessById" resultMap="MessList" parameterType="int">
+    SELECT * FROM messing where mes_id=#{mesId}
+    </select>
+
+
+    <!--修改作者信息-->
+    <update id="updateMess" parameterType="messing">
+        UPDATE messing
+        <trim prefix="set" suffixOverrides=",">
+            <if test="mesTitle!=null and mesTitle!=''">
+                mes_title=#{mesTitle},
+            </if>
+            <if test="mesContent!=null and mesContent!=''">
+                mes_content=#{mesContent},
+            </if>
+        </trim>
+        where mes_id=#{mesId}
+    </update>
+
+    <!--查询总数量-->
+    <select id="selectCount" resultType="int">
+        SELECT COUNT(1) FROM messing
+    </select>
+
+    <!--查询总数量-->
+    <select id="selectMesslistCount" resultType="int">
+        SELECT COUNT(1) FROM messing
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="mesTitle != null and mesTitle!=''">
+                and mes_title LIKE CONCAT('%',#{mesTitle},'%')
+            </if>
+        </trim>
+    </select>
+
+    <!--查询近期的四篇公告-->
+    <select id="selctTopFour" resultMap="MessList" parameterType="int">
+    SELECT * FROM messing ORDER BY mes_time DESC LIMIT 0,4
+    </select>
+
+    <!--根据作者group by-->
+    <select id="selectMesBy" resultMap="MessList" parameterType="int">
+    SELECT COUNT(1),mes_by FROM messing GROUP BY mes_by
+    </select>
+
+    <!--根据作者查询-->
+    <select id="selectMesByMes" resultMap="MessList">
+    SELECT * FROM messing WHERE mes_by=#{mesBy}
+    </select>
+
+</mapper>
