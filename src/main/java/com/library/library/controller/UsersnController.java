@@ -275,6 +275,40 @@ public class UsersnController {
         return "services";
     }
 
+    // 主页面
+    @RequestMapping(value = "setMail.html")
+    public String setMail(Model model,HttpSession session) {
+        return "register_mail";
+    }
+
+    /**
+     * 添加邮箱
+     *
+     * @param session
+     * @return
+     */
+    @RequestMapping(value = "addmail.html", method = RequestMethod.POST)
+    public String addMail(String email,String verify,HttpServletRequest request, HttpSession session) {
+        logger.info("验证码为=="+VerificationNum);
+        if (VerificationNum.equals(verify)) {
+
+            usersn user= (usersn) session.getAttribute("user");
+            usersn usersn = new usersn();
+            usersn.setUid(user.getUid());
+
+            if(Verification.checkEmail(email)==true){
+                usersn.setMail(email);
+                logger.info("邮箱添加");
+            }
+            int num = usersnService.modifUsersnMail(usersn);
+            logger.info("添加用户========>" + num);
+            if (num > 0) {
+                return "redirect:/users/getSale.html";
+            }
+        }
+        return "missnum";
+    }
+
 
 
 

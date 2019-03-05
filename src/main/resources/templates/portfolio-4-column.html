@@ -65,6 +65,9 @@
 									<a th:text="${session.user.uname}">登录</a>
 									<ul>
 										<li><a th:href="@{/users/getSale.html}">我的订单</a></li>
+										<li th:if="${session.user.mail}==null">
+											<a th:href="@{/users/setMail.html}">绑定邮箱</a>
+										</li>
 									</ul>
 								</li>
 								<li th:if="${session.user}==null">
