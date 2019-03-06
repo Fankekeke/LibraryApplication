@@ -171,8 +171,8 @@
                                 </div>
                                 <div class="portfolio-content">
                                     <a th:href="${book1.image}" class="portfolio-zoom-button"></a>
-                                    <h5><a href="portfolio-details.html" th:text="${book1.title}"></a></h5>
-                                    <h6><a href="portfolio.html" th:text="${book1.author}">PORTFOLIO</a></h6>
+                                    <h5><a th:href="@{/book/getBook(isbn=${book1.isbn})}" th:text="${book1.title}"></a></h5>
+                                    <h6><a th:href="@{/book/getBook(isbn=${book1.isbn})}" th:text="${book1.author}">PORTFOLIO</a></h6>
                                 </div>
                             </div>
                         </div>
@@ -187,8 +187,8 @@
                                 </div>
                                 <div class="portfolio-content">
                                     <a th:href="${book2.image}" class="portfolio-zoom-button"></a>
-                                    <h5><a href="portfolio-details.html" th:text="${book2.title}"></a></h5>
-                                    <h6><a href="portfolio.html" th:text="${book2.author}">PORTFOLIO</a></h6>
+                                    <h5><a th:href="@{/book/getBook(isbn=${book2.isbn})}" th:text="${book2.title}"></a></h5>
+                                    <h6><a th:href="@{/book/getBook(isbn=${book2.isbn})}" th:text="${book2.author}">PORTFOLIO</a></h6>
                                 </div>
                             </div>
                         </div>
